@@ -5,27 +5,29 @@ Resource            ../Resource1.robot
 *** Variables ***
 ${URL}              ${EMPTY}
 ${BROWSER}          ${EMPTY}
+${DELAY}            5
 
 *** Test Cases ***
 OpenBrowser
-      [Setup]      SERVER START
-      [Template]      OPEN BROWSER
-      localhost:7272      ff
-      localhost:7272      gc
-      localhost:7272      ie
-
-test
-      SERVER START
+      [Setup]
+      [Template]
+      OPEN BROWSER      https://translate.google.co.kr/      ff
+      Sel.Input Text      id=source      Hello
+      Sel.Element Text Should Be      //span[@id='result_box']/span[1]      안녕하세요
+      [Teardown]      Sel.Close Browser
 
 *** Keywords ***
 OPEN BROWSER
       [Arguments]      ${URL}      ${BROWSER}
       Sel.Open Browser      ${URL}      ${BROWSER}
-      [Teardown]      Sel.Close Browser
+      Sel.Maximize Browser Window
+      Sel.Set Selenium Speed      ${DELAY}
+      Sel.Title Should Be      Google 번역
+      [Teardown]
 
 AI.Run
       [Arguments]      ${arg1}
 
 SERVER START
-      OS.Run      E:\\KeywordAutomation\\TestTool\\4_2_SeleniumLibrary\\WebServer\\server.py
-      Should Contain      cmd.exe      Demo Server
+      ${ret}      OS.Run And Return Rc      E:\\KeywordAutomation\\TestData\\5.SeleniumLibrary\\server.bat
+      Should Be Equal      ${ret}      0
