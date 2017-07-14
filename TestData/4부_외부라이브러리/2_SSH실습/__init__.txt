@@ -1,0 +1,2 @@
+*** Settings ***
+Resource            SSH_Resource
