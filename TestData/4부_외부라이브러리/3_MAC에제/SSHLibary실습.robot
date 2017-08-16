@@ -18,7 +18,8 @@ ${PASSWORD}       keyword
 202_SSH 실습
     [Documentation]    Write 키워드, Read Until 키워드 실습.
     ssh.Write    cd ..
-    ssh.Write    echo Hello keword automation
+    ssh.Write
+    echo Hello keword automation
     ${output}=    ssh.Read Until    automation
     Should End With    ${output}    Hello keword automation
 
