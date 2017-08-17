@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170704 13:51:37.518" generator="Robot 3.0.2 (Python 2.7.3 on win32)">
+<suite source="E:\KeywordAutomation\TestData\5.SeleniumLibrary\weblogin.robot" id="s1" name="Weblogin">
+<test id="s1-t1" name="OpenBrowser">
+<kw type="setup" name="SERVER START">
+<kw name="Run" library="OS">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>E:\\KeywordAutomation\\TestTool\\4_2_SeleniumLibrary\\WebServer\\server.py</arg>
+</arguments>
+<msg timestamp="20170704 13:51:38.466" level="INFO">Running command 'E:\KeywordAutomation\TestTool\4_2_SeleniumLibrary\WebServer\server.py 2&gt;&amp;1'.</msg>
+<errors>
+</errors>
+</robot>

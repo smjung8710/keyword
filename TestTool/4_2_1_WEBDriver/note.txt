@@ -1,1 +1,13 @@
 사용하고자 하는 드라이브를 다운받아  C:\Python27\Scripts 하위에 복사해둡니다. 
+
+FF - geckodriver
+
+https://github.com/mozilla/geckodriver/ 
+
+gc - chromedriver
+
+https://sites.google.com/a/chromium.org/chromedriver/downloads
+
+IE - IEDriverServer
+
+https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver 
