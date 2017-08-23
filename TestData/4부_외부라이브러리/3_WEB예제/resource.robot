@@ -42,3 +42,7 @@ Submit Credentials
 Welcome Page Should Be Open
     Sel.Location Should Be    ${WELCOME URL}
     Sel.Title Should Be    Welcome Page
+
+Login Should Have Failed
+    Sel.Location Should Be    ${ERROR URL}
+    Sel.Title Should Be    Error Page

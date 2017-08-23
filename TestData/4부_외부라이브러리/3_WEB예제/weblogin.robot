@@ -9,13 +9,22 @@ ${BROWSER}        ${EMPTY}
 ${DELAY}          5
 
 *** Test Cases ***
-OpenBrowser
+OpenBrowser 구글
     [Setup]
     [Template]
-    OPEN BROWSER    https://translate.google.co.kr/    gc
+    Sel.Open Browser    https://translate.google.co.kr/    gc
     Sel.Input Text    id=source    Hello
     Sel.Element Text Should Be    //span[@id='result_box']/span[1]    안녕하세요
     [Teardown]    Sel.Close Browser
+
+OpenBrowser NAVER
+    [Setup]
+    [Template]
+    Sel.Open Browser    https://www.naver.com    gc
+    Sel.Maximize Browser Window
+    Sel.Input Text    id    jsm1111111
+    Sel.Input Text    pw    breakaleg2014
+    Sel.Click Button    로그인
 
 SERVER START
     [Setup]
