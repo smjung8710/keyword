@@ -1,0 +1,42 @@
+*** Settings ***
+Resource          Resource1.robot
+
+*** Test Cases ***
+test
+    Selenium.Open Browser    https://accounts.google.com/signin    browser=chrome    alias=None    remote_url=http://${RemoteIP}:5555/wd/hub
+    Selenium.Maximize Browser Window
+    Selenium.Set Selenium Speed    0.1sec
+    Selenium.Input Text    xpath=//*[@id="identifierId"]    ${ID}
+    Selenium.Input Text    id=userPassword    ${Password}
+    Selenium.Click Element    id=loginBtn
+    Selenium.Wait Until Page Contains    ${ID}    10sec
+
+White DNA Submit Rule and Active Rule
+    Comment    Selenium.Set Selenium Speed    1sec
+    Click Element    xpath=(//section[@class='content'])
+    Execute Javascript    window.scrollTo(0,0)
+    Wait Until Page Loaded
+    Selenium.Wait Until Element Is Visible    id=saveBtn    30sec
+    Selenium.Click Element    id=saveBtn
+    Builtin.Run Keyword And Ignore Error    Selenium.Confirm Action
+    Wait Until Page Loaded
+    Selenium.Wait Until Element Is Visible    id=submitBtn    30sec
+    Selenium.Click Element    id=submitBtn
+    Builtin.Run Keyword And Ignore Error    Selenium.Confirm Action
+    Builtin.Run Keyword And Ignore Error    Selenium.Confirm Action
+    Wait Until Page Loaded
+    Selenium.Wait Until Element Is Visible    id=activeBtn    30sec
+    Selenium.Click Element    id=activeBtn
+    Builtin.Run Keyword And Ignore Error    Selenium.Confirm Action
+    Wait Until Page Loaded
+    Selenium.Wait Until Element Is Visible    id=inActiveBtn    30sec
+
+google
+    Selenium.Open Browser    https://accounts.google.com/signin    ff
+    Selenium.Input Text    xpath=//*[@id="identifierId"]    smjung8710
+    Selenium.Click Element    xpath=//*[@id="identifierNext"]/content/span
+
+101_플랫폼정보확인
+    ${arch}=    self.Get_ARCH
+    log    ${arch}
+    self.OpenLoginPageChrome    demo    mode

@@ -1,12 +1,18 @@
 *** Settings ***
-Library           RemoteLibrary    http://${Target_IP}:8270    WITH NAME    Remote
+Library           Remote    http://${ADDRESS}:${PORT}    WITH NAME    remote
 
 *** Variables ***
-${Target_IP}      10.2.6.104
+${ADDRESS}        127.0.0.1
+${PORT}           8270
 
 *** Test Cases ***
+Failing Example
+    Strings Should Be Equal    Hello    Hello
+    Strings Should Be Equal    not    equal
+
 101_File
-    Remote.Create Directory    /tmp/keyword
+    remote.Create Directory    /tmp/keyword
+    remote.File Should Exist    ${file}    No FileManagement
 
 301_파일비교_linux
     Remote.Create File    /keyword/files.txt    this is file management
