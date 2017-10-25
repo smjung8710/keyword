@@ -28,15 +28,29 @@ OpenBrowser NAVER
 
 SERVER START
     [Setup]
-    OPEN BROWSER    http://localhost:7272    gc
+    OPEN WEB BROWSER    http://localhost:7272    gc
+
+test
+    Sel.Open Browser    chrome://settings/searchEngines    gc
+    sleep    3
+    Click Element    xpath=//*[@id="addSearchEngine"]
+    Sel.Input Text    xpath=//*[@id="input"]    yahoo
+    Sel.Input Text    xpath=//*[@id="input"]    yahoo.com    //*[@id="paper-input-label-2"]
+    Sel.Input Text    xpath=//*[@id="input"]    yahoo.com
+    Click Element    //*[@id="actionButton"]
+    Comment    Input Text    id=input    yahoo
+    Comment    Input Text    \ \ \ \ \ </paper-button>    yahoo.com
+    Comment    Input Text    class=url-column weakrtl    yahoo.com
+    Execute Javascript
+    Confirm Action
 
 *** Keywords ***
-OPEN BROWSER
-    [Arguments]    ${URL}    ${BROWSER}
+OPEN WEB BROWSER
+    [Arguments]    ${URL}    ${BROWSER}    ${title}
     Sel.Open Browser    ${URL}    ${BROWSER}
     Sel.Maximize Browser Window
     Sel.Set Selenium Speed    ${DELAY}
-    Sel.Title Should Be    Google 번역
+    Sel.Title Should Be    ${title}
     [Teardown]
 
 AI.Run

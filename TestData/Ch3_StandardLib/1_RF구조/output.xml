@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170824 10:30:21.226" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Users\automation\keyword\TestData\3부_표준라이브러리\1_RF구조\RF기본구조.robot" id="s1" name="RF기본구조">
+<kw type="setup" name="TS_SETUP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20170824 10:30:21.292" level="INFO">1</msg>
+<status status="PASS" endtime="20170824 10:30:21.292" starttime="20170824 10:30:21.292"></status>
+</kw>
+<status status="PASS" endtime="20170824 10:30:21.292" starttime="20170824 10:30:21.291"></status>
+</kw>
+<test id="s1-t1" name="실습0_RF구조">
+<kw type="setup" name="SETUP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170824 10:30:21.294" level="INFO">3</msg>
+<status status="PASS" endtime="20170824 10:30:21.294" starttime="20170824 10:30:21.294"></status>
+</kw>
+<status status="PASS" endtime="20170824 10:30:21.294" starttime="20170824 10:30:21.293"></status>
+</kw>
+<kw name="Example keyword">
+<doc>example keyword</doc>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>keyword</arg>
+</arguments>
+<msg timestamp="20170824 10:30:21.296" level="INFO">keyword</msg>
+<status status="PASS" endtime="20170824 10:30:21.296" starttime="20170824 10:30:21.295"></status>
+</kw>
+<kw type="teardown" name="K_TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20170824 10:30:21.296" level="INFO">4</msg>
+<status status="PASS" endtime="20170824 10:30:21.296" starttime="20170824 10:30:21.296"></status>
+</kw>
+<status status="PASS" endtime="20170824 10:30:21.297" starttime="20170824 10:30:21.296"></status>
+</kw>
+<status status="PASS" endtime="20170824 10:30:21.297" starttime="20170824 10:30:21.295"></status>
+</kw>
+<kw type="teardown" name="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170824 10:30:21.297" level="INFO">5</msg>
+<status status="PASS" endtime="20170824 10:30:21.297" starttime="20170824 10:30:21.297"></status>
+</kw>
+<status status="PASS" endtime="20170824 10:30:21.298" starttime="20170824 10:30:21.297"></status>
+</kw>
+<doc>example testcase</doc>
+<timeout value="1 hour 40 minutes 2 seconds"></timeout>
+<status status="PASS" endtime="20170824 10:30:21.298" critical="yes" starttime="20170824 10:30:21.292"></status>
+</test>
+<kw type="teardown" name="TS_TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>7</arg>
+</arguments>
+<msg timestamp="20170824 10:30:21.299" level="INFO">7</msg>
+<status status="PASS" endtime="20170824 10:30:21.299" starttime="20170824 10:30:21.299"></status>
+</kw>
+<status status="PASS" endtime="20170824 10:30:21.299" starttime="20170824 10:30:21.298"></status>
+</kw>
+<doc>Keyword Based Automation Test</doc>
+<status status="PASS" endtime="20170824 10:30:21.299" starttime="20170824 10:30:21.230"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="RF기본구조" pass="1">RF기본구조</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

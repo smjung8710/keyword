@@ -1,0 +1,30 @@
+*** Settings ***
+Documentation     demo for appium library
+Library           AppiumLibrary    WITH NAME    APP
+
+*** Test Cases ***
+OrangeDemoApp
+    APP.Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=42f2df1e8dbc8fe7    platformVersion=4.4.2    app=C:\\Users\\automation\\keyword\\TestTool\\4_5_App\\demoapp\\OrangeDemoApp.apk    automationName=Appium
+    ...    appPackage=com.netease.qa.orangedemo    appActivity=MainActivity
+    APP.Capture Page Screenshot    demo.png
+    APP.Page Should Contain Text    Orange_Demo
+    APP.Close Application
+
+ContactManagerApp
+    APP.Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=42f2df1e8dbc8fe7    platformVersion=4.4.2    app=C:\\Users\\automation\\keyword\\TestTool\\4_5_App\\demoapp\\ContactManager.apk    automationName=Appium
+    ...    appPackage=com.example.android.contactmanager
+    APP.Page Should Contain Text    Contact Manager
+    add new contact    Appium User    someone@appium.io    5555555555
+    APP.Click Text    Show Invisible Contacts (Only)
+    APP.Page Should Contain Text    Appium User
+    APP.Close Application
+
+*** Keywords ***
+add new contact
+    [Arguments]    ${contact_name}    ${contact_phone}    ${contact_email}
+    [Documentation]    input name, phone, email
+    APP.Click Element    accessibility_id=Add Contact
+    APP.Input Text    xpath=//android.widget.TableLayout[@index='0']/android.widget.TableRow[@index='3']/android.widget.EditText[@index='0']    ${contact_name}
+    APP.Input Text    xpath=//android.widget.TableLayout[@index='0']/android.widget.TableRow[@index='5']/android.widget.EditText[@index='0']    ${contact_phone}
+    APP.Input Text    xpath=//android.widget.TableLayout[@index='0']/android.widget.TableRow[@index='7']/android.widget.EditText[@index='0']    ${contact_email}
+    APP.Click Element    accessibility_id=Save
