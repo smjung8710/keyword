@@ -14,6 +14,7 @@ an argument from the command line.
 """
 
 from __future__ import print_function
+from googletrans import Translator
 
 from os import chdir
 from os.path import abspath, dirname, join

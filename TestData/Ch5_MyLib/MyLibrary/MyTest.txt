@@ -1,0 +1,14 @@
+*** Settings ***
+Documentation     자체 파이썬 라이브러리를 이용하여 키워드 테스트 케이스 실습
+Force Tags        my
+Resource          MyLibrary.robot
+
+*** Test Cases ***
+플랫폼정보확인
+    [Documentation]    autoit library로 유저 키워드를 사용했던 방식을 유저 라이브러리를 이용하는 것으로 변경
+    ${arch}=    my.Get Arch
+    log    ${arch}
+
+이름변경
+    my.Change Under To Blank    C:\\Users\\automation\\test
+    my.Change Blank To Underbar    C:\\Users\\automation\\test

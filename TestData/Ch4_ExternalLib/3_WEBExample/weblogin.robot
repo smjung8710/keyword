@@ -22,9 +22,10 @@ OpenBrowser NAVER
     [Template]
     Sel.Open Browser    https://www.naver.com    gc
     Sel.Maximize Browser Window
-    Sel.Input Text    id    jsm1111111
-    Sel.Input Text    pw    breakaleg2014
+    Sel.Input Text    id    id
+    Sel.Input Text    pw    pw
     Sel.Click Button    로그인
+    Sel.Click Button    //*[@id="frmNIDLogin"]/fieldset/span[2]/a
 
 SERVER START
     [Setup]
