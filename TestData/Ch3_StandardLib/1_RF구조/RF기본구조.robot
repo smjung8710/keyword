@@ -6,7 +6,6 @@ Test Setup        TC_SETUP
 Test Teardown     TC_TEARDOWN
 Test Template
 Test Timeout      1 hour 40 minutes 2 seconds
-Resource          리소스.robot
 
 *** Variables ***
 ${USER_NAME}      robot

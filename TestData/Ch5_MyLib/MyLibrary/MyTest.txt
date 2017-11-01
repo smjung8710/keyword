@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation     자체 파이썬 라이브러리를 이용하여 키워드 테스트 케이스 실습
 Force Tags        my
-Resource          MyLibrary.robot
 
 *** Test Cases ***
 플랫폼정보확인
@@ -11,4 +10,5 @@ Resource          MyLibrary.robot
 
 이름변경
     my.Change Under To Blank    C:\\Users\\automation\\test
+    sleep    3
     my.Change Blank To Underbar    C:\\Users\\automation\\test

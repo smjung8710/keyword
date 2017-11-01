@@ -1,12 +1,16 @@
-1504860020709	geckodriver	INFO	geckodriver 0.18.0
-1504860020811	geckodriver	INFO	Listening on 127.0.0.1:59788
-1504860022751	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
-1504860023406	addons.manager	DEBUG	Application has been upgraded
-1504860023747	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider"]
-1504860023751	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
-1504860023756	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
-1504860023759	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
-1504860023760	addons.manager	DEBUG	Starting provider: XPIProvider
+1509534434399	geckodriver	INFO	geckodriver 0.18.0
+1509534434493	geckodriver	INFO	Listening on 127.0.0.1:61309
+1509534436474	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1509534438628	Marionette	INFO	Listening on port 61315
+1509534440618	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 12364] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w64-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+[Child 12364] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w64-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+
+KLIB_SelfTest return : KLR_OK
+c/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+
+KLIB_SelfTest return : KLR_OK
+r: XPIProvider
 1504860023760	addons.xpi	DEBUG	startup
 1504860023761	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
 1504860023763	addons.xpi	INFO	Mapping aushelper@mozilla.org to C:\Program Files\Mozilla Firefox\browser\features\aushelper@mozilla.org.xpi

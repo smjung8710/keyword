@@ -1,4 +1,5 @@
 *** Settings ***
+Suite Teardown    Close Browser
 Library           AutoItLibrary    WITH NAME    AI    # 오토잇라이브러리
 Library           OperatingSystem    WITH NAME    OS
 Library           Selenium2Library    WITH NAME    Sel
@@ -9,7 +10,7 @@ ${BROWSER}        ${EMPTY}
 ${DELAY}          5
 
 *** Test Cases ***
-OpenBrowser 구글
+Google_Translate
     [Setup]
     [Template]
     Sel.Open Browser    https://translate.google.co.kr/    gc
@@ -17,7 +18,7 @@ OpenBrowser 구글
     Sel.Element Text Should Be    //span[@id='result_box']/span[1]    안녕하세요
     [Teardown]    Sel.Close Browser
 
-OpenBrowser NAVER
+Naver_Login
     [Setup]
     [Template]
     Sel.Open Browser    https://www.naver.com    gc
@@ -45,6 +46,15 @@ test
     Execute Javascript
     Confirm Action
 
+Google_Login
+    Selenium.Open Browser    https://accounts.google.com/signin    browser=chrome    alias=None    remote_url=http://${RemoteIP}:5555/wd/hub
+    Selenium.Maximize Browser Window
+    Selenium.Set Selenium Speed    0.1sec
+    Selenium.Input Text    xpath=//*[@id="identifierId"]    ${ID}
+    Selenium.Input Text    id=userPassword    ${Password}
+    Selenium.Click Element    id=loginBtn
+    Selenium.Wait Until Page Contains    ${ID}    10sec
+
 *** Keywords ***
 OPEN WEB BROWSER
     [Arguments]    ${URL}    ${BROWSER}    ${title}
@@ -53,9 +63,6 @@ OPEN WEB BROWSER
     Sel.Set Selenium Speed    ${DELAY}
     Sel.Title Should Be    ${title}
     [Teardown]
-
-AI.Run
-    [Arguments]    ${arg1}
 
 SERVER START
     ${ret}    OS.Run And Return Rc    python C:\\Users\\ahnlab\\github\\keyword\\TestTool\\WebServer\\server.py
