@@ -12,3 +12,14 @@ Force Tags        my
     my.Change Under To Blank    C:\\Users\\automation\\test
     sleep    3
     my.Change Blank To Underbar    C:\\Users\\automation\\test
+
+test
+    Call Selenium Api    open    /
+    Call Selenium Api    clickAndWait    css=span.naver_logo
+    Input Text    id    jsm1111111
+    Input Text    pw    breakaleg2014
+    Call Selenium Api    clickAndWait    css=input[type="submit"]
+    Call Selenium Api    selectFrame    minime
+    Call Selenium Api    click    css=#mail_count_profile > i
+    Call Selenium Api    selectWindow    null
+    Call Selenium Api    click    //div[@'nav_snb']/div[2]/a/em

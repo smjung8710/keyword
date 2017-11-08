@@ -1,20 +1,17 @@
 *** Settings ***
+Library           Remote    http://10.2.6.104:8270    WITH NAME    remote
 Library           AutoItLibrary    WITH NAME    AI    # 오토잇라이브러리
 Library           OperatingSystem    WITH NAME    OS
 Library           Selenium2Library    WITH NAME    Sel
 Library           AppiumLibrary    WITH NAME    App
 Library           SSHLibrary    WITH NAME    ssh
-Library           Collections
-Library           DateTime
-Library           Dialogs
-Library           Process
-Library           Screenshot
-Library           string
-Library           Telnet
-Library           XML
 Library           CalculatorLibrary.py    WITH NAME    Cal
 Library           MyWinLibrary.py    WITH NAME    my
 Library           MyWebLibrary.py    WITH NAME    web
+Library           Remote    http://10.2.6.104:8273    WITH NAME    ESel
+Library           ExtendedSelenium2Library    WITH NAME    ESel
+Library           Test6    WITH NAME    test
+Library           request    WITH NAME    request
 
 *** Variables ***
 ${HOST}           9.9.9.9
