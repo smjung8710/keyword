@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite failures="0" tests="2" errors="0" name="TestData" skip="0">
+<testcase classname="TestData.Ch3 StandardLib.2 Interface.2 1 VariableKeyword" name="Ex3_Example Global Variable" time="0">
+</testcase>
+<testcase classname="TestData.Ch3 StandardLib.2 Interface.2 1 VariableKeyword" name="Ex3_Example Variable" time="0">
+</testcase>
+</testsuite>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180103 13:27:12.129" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="E:\keyword\TestData\Ch3_StandardLib\1_Syntax\RFBaseStructure.robot" id="s1" name="RFBaseStructure">
+<kw type="setup" name="TS_SETUP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>1.TS_SETUP</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.160" level="INFO">1.TS_SETUP</msg>
+<status status="PASS" endtime="20180103 13:27:12.160" starttime="20180103 13:27:12.160"></status>
+</kw>
+<status status="PASS" endtime="20180103 13:27:12.160" starttime="20180103 13:27:12.159"></status>
+</kw>
+<test id="s1-t1" name="Ex0_RF">
+<kw type="setup" name="Example_SETUP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>3.Example_SETUP</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.161" level="INFO">3.Example_SETUP</msg>
+<status status="PASS" endtime="20180103 13:27:12.161" starttime="20180103 13:27:12.161"></status>
+</kw>
+<status status="PASS" endtime="20180103 13:27:12.161" starttime="20180103 13:27:12.161"></status>
+</kw>
+<kw name="Example keyword">
+<doc>example keyword</doc>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>doing keyword.....</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.162" level="INFO">doing keyword.....</msg>
+<status status="PASS" endtime="20180103 13:27:12.162" starttime="20180103 13:27:12.162"></status>
+</kw>
+<kw type="teardown" name="Keyword_TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>4.Keyword_TEARDOWN</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.163" level="INFO">4.Keyword_TEARDOWN</msg>
+<status status="PASS" endtime="20180103 13:27:12.163" starttime="20180103 13:27:12.163"></status>
+</kw>
+<status status="PASS" endtime="20180103 13:27:12.163" starttime="20180103 13:27:12.163"></status>
+</kw>
+<status status="PASS" endtime="20180103 13:27:12.163" starttime="20180103 13:27:12.162"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>${USER_NAME}</arg>
+<arg>${USER_PASS}</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.164" level="INFO">robot</msg>
+<msg timestamp="20180103 13:27:12.164" level="INFO">secret</msg>
+<status status="PASS" endtime="20180103 13:27:12.164" starttime="20180103 13:27:12.164"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Welcome ${USER_NAME}</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.165" level="INFO">Welcome robot</msg>
+<status status="PASS" endtime="20180103 13:27:12.165" starttime="20180103 13:27:12.164"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>@{USER1}</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.165" level="INFO">robot</msg>
+<msg timestamp="20180103 13:27:12.165" level="INFO">secret</msg>
+<status status="PASS" endtime="20180103 13:27:12.165" starttime="20180103 13:27:12.165"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Welcome @{USER1}[0]</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.166" level="INFO">Welcome robot</msg>
+<status status="PASS" endtime="20180103 13:27:12.166" starttime="20180103 13:27:12.166"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>&amp;{USER2}</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.167" level="INFO">name=robot</msg>
+<msg timestamp="20180103 13:27:12.167" level="INFO">pass=secret</msg>
+<status status="PASS" endtime="20180103 13:27:12.167" starttime="20180103 13:27:12.166"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Welcome &amp;{USER2}[name]</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.167" level="INFO">Welcome robot</msg>
+<status status="PASS" endtime="20180103 13:27:12.168" starttime="20180103 13:27:12.167"></status>
+</kw>
+<kw type="teardown" name="Example_TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>5.Example_TEARDOWN</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.168" level="INFO">5.Example_TEARDOWN</msg>
+<status status="PASS" endtime="20180103 13:27:12.168" starttime="20180103 13:27:12.168"></status>
+</kw>
+<status status="PASS" endtime="20180103 13:27:12.168" starttime="20180103 13:27:12.168"></status>
+</kw>
+<doc>example testcase</doc>
+<timeout value="1 hour 40 minutes 2 seconds"></timeout>
+<status status="PASS" endtime="20180103 13:27:12.169" critical="yes" starttime="20180103 13:27:12.160"></status>
+</test>
+<kw type="teardown" name="TS_TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>7.TS_TEARDOWN</arg>
+</arguments>
+<msg timestamp="20180103 13:27:12.170" level="INFO">7.TS_TEARDOWN</msg>
+<status status="PASS" endtime="20180103 13:27:12.171" starttime="20180103 13:27:12.170"></status>
+</kw>
+<status status="PASS" endtime="20180103 13:27:12.171" starttime="20180103 13:27:12.170"></status>
+</kw>
+<doc>Keyword Based Automation Test</doc>
+<status status="PASS" endtime="20180103 13:27:12.171" starttime="20180103 13:27:12.134"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="RFBaseStructure" pass="1">RFBaseStructure</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180103 13:27:12.157" level="WARN">Imported resource file 'E:\keyword\TestData\Ch3_StandardLib\common.robot' is empty.</msg>
+</errors>
+</robot>

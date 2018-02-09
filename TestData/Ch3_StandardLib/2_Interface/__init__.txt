@@ -1,0 +1,2 @@
+*** Settings ***
+Resource          Ukey_Standard.robot
