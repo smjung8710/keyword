@@ -4,14 +4,18 @@ Documentation     정상 로그인에 대한 테스트 스윗입니다.
 Resource          resource.robot
 
 *** Test Cases ***    English                        Korean
-Valid Login           Open Browser To Login Page
+Ex25_Example Login    Open Browser To Login Page
                       Input Username                 demo
                       Input Password                 mode
                       Submit Credentials
                       Welcome Page Should Be Open
                       [Teardown]                     Sel.Close Browser
 
-구글번역                  구글번역
+구글번역                  Sel.Open Browser               https://www.google.co.kr/    gc
+                      Sel.Maximize Browser Window
+                      Sel.Input Text                 xpath=//*[@id="lst-ib"]      구글 번역
+                      Click Button                   Google 검색
+                      Sel.Set Selenium Speed         2
                       [Teardown]
 
 구글번역_템플릿이용            [Template]                     구글번역
