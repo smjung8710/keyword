@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite failures="1" tests="1" errors="0" name="TestData" skip="0">
-<testcase classname="TestData.Ch5 WebAPP.3 WEBExample.3 1 OpenBrowser" name="Ex25_Example Login" time="8">
-<failure message="WebDriverException: Message: unknown error: Runtime.executionContextCreated has invalid 'context': {&quot;auxData&quot;:{&quot;frameId&quot;:&quot;(71496521ED23C4D3B23E0CB595E9FF83)&quot;,&quot;isDefault&quot;:true},&quot;id&quot;:1,&quot;name&quot;:&quot;&quot;,&quot;origin&quot;:&quot;://&quot;}&#10;  (Session info: chrome=63.0.3239.132)&#10;  (Driver info: chromedriver=2.9.248315,platform=Windows NT 6.1 SP1 x86_64)&#10;" type="AssertionError"></failure>
-</testcase>
-</testsuite>

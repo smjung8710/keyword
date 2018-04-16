@@ -1,1 +1,0 @@
-python C:\WebServer\server.py
