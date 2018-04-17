@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python
-# -*- coding: cp949 -*-
+
 
 import os
 import sys
@@ -19,4 +20,3 @@ class ExampleRemoteLibrary(object):
 if __name__ == '__main__':
     from robotremoteserver import RobotRemoteServer
     RobotRemoteServer(ExampleRemoteLibrary(), *sys.argv[1:])
-

@@ -1,12 +1,15 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python
-# -*- coding: cp949 -*-
 
 
 import platform
 import os, sys, random
 import csv
 import pywinauto
+import io
 
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
+sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s-%(levelname)s - %(message)s')
 logging.debug('Start of program')
@@ -15,11 +18,11 @@ class MyWinLibrary(object):
 
     def Change_blank_to_underbar(self,path):
         logging.debug('Start of Change_blank_to_underbar')
-        #º¯°æÇÒ µð·ºÅä¸®¸¦ ¹Þ¾Æ¿Â´Ù.
+        #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½Þ¾Æ¿Â´ï¿½.
         FileList = os.listdir(path)
         print(FileList)
         for files in FileList:
-            #ºóÄ­ÀÎ°æ¿ì¿¡ ¾ð´õ¹Ù·Î ±³Ã¼ÇÑ´Ù
+            #ï¿½ï¿½Ä­ï¿½Î°ï¿½ï¿½ì¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ù·ï¿½ ï¿½ï¿½Ã¼ï¿½Ñ´ï¿½
             if ' ' in files:
                 NewName = files.replace(" ", "_")
                 os.rename(os.path.join(path, files), os.path.join(path, NewName))
@@ -28,21 +31,21 @@ class MyWinLibrary(object):
 
     def Change_under_to_blank(self,path):
         logging.debug('Start of Change_under_to_blank')
-        #º¯°æÇÒ µð·ºÅä¸®¸¦ ¹Þ¾Æ¿Â´Ù.
+        #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½Þ¾Æ¿Â´ï¿½.
         FileList = os.listdir(path)
         print(FileList)
         for files in FileList:
-            #ºóÄ­ÀÎ°æ¿ì¿¡ ¾ð´õ¹Ù·Î ±³Ã¼ÇÑ´Ù
+            #ï¿½ï¿½Ä­ï¿½Î°ï¿½ï¿½ì¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ù·ï¿½ ï¿½ï¿½Ã¼ï¿½Ñ´ï¿½
             if '_' in files:
                 NewName = files.replace("_", " ")
                 os.rename(os.path.join(path, files), os.path.join(path, NewName))
         FileList = os.listdir(path)
         print(FileList)
-        
+
     def Get_ARCH(self):
-	    # ¸Ó½Å Á¤º¸¸¦ machine º¯¼ö¿¡ ¼±¾ð
+	    # ï¿½Ó½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ machine ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         machine=platform.machine()
-		# ¸Ó½Å Á¤º¸¸¦ x86, x64 ·Î ±¸ºÐÇÏµµ·Ï Á¤ÀÇ 
+		# ï¿½Ó½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ x86, x64 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if machine == "AMD64":
             machine = 'x64'
         else:
@@ -64,24 +67,23 @@ class MyWinLibrary(object):
         return csvData
 
 
-"""		
+"""
     def autoit(self):
-	# ¨ç ³ëÆ® ÆÐµå ½ÇÇà
+	# ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½Ðµï¿½ ï¿½ï¿½ï¿½ï¿½
 	autoit.run("notepad.exe")
-	# ¨è ³ëÆ®ÆÐµå ½ÇÇà È®ÀÎ 
+	# ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ðµï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 	autoit.win_wait_active("[CLASS:Notepad]", 3)
-	# ¨é "hello world!" ÀÔ·Â
+	# ï¿½ï¿½ "hello world!" ï¿½Ô·ï¿½
 	autoit.control_send("[CLASS:Notepad]", "Edit1", "hello world{!}")
-	# ¨ê ³ëÆ®ÆÐµå Á¾·á
+	# ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ðµï¿½ ï¿½ï¿½ï¿½ï¿½
 	autoit.win_close("[CLASS:Notepad]")
-	# ¨ë ÀúÀå¾ÈÇÔ ¹öÆ° Å¬¸¯ 
+	# ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½
 	autoit.control_click("[Class:#32770]", "Button2")
 
-"""		
+"""
 if __name__ == "__main__":
     test=MyWinLibrary()
     print(test.Get_ARCH())
     folder=r"C:\Users\automation\test"
     test.Change_blank_to_underbar(folder)
-    #print(test.readcsv('example.csv'))	
-    
+    #print(test.readcsv('example.csv'))
