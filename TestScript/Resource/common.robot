@@ -17,6 +17,7 @@ Library           DatabaseLibrary    WITH NAME    DB    # 데이터베이스 라
 Library           PysphereLibrary    WITH NAME    VM
 Library           ImapLibrary    WITH NAME    Mail
 Library           DiffLibrary    WITH NAME    Diff
+Library           FtpLibrary    WITH NAME    FTP
 Resource          remote.robot    # 원격 라이브러리 사용을 위한 리소스
 Library           MyWebLibrary.py    WITH NAME    my
 

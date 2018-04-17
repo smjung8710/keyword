@@ -34,20 +34,28 @@ TC_VM_Connect
     VM.Close Pysphere Connection
 
 TC_VM_Snapshot
-    Snapshot Create    OSX_10.11_El_Capitan    A
+    ConnectVM
+    VM.Power On Vm    ${VM_1}
+    Snapshot Create    ${VM_1}    A
     ${ret}    VM.Get Vm Names
     Should Contain    ${ret}    A
-    Comment    Snapshot Create    sm_win10_x64_1703_192.168.0.104    B
-    Comment    ${ret}    VM.Get Vm Names
-    Comment    Should Contain    ${ret}    B
-    Comment    Snapshot Create    sm_win10_x64_1703_192.168.0.104    C
-    Comment    ${ret}    VM.Get Vm Names
-    Comment    Should Contain    ${ret}    C
-    Comment    Snapshot Revert    B
-    Comment    Snapshot Delete    A
-    Comment    Snapshot Exist
+    Snapshot Create    ${VM_1}    B
+    ${ret}    VM.Get Vm Names
+    Should Contain    ${ret}    B
+    Snapshot Create    ${VM_1}    C
+    ${ret}    VM.Get Vm Names
+    Should Contain    ${ret}    C
+    Snapshot Revert    B
+    Snapshot Delete    A
+    Snapshot Exist
 
-TC_Beatiful
+TC_FTP_Connect
+    FTP.Ftp Connect    ${HOST}    ${ID}    ${PW}    timeout=20    ConnId=first
+    FTP.Get Welcome
+    FTP.Cwd    /home/myname/tmp/testdir    first
+    FTP.Mkd    TEST_SAMPLE    first
+    FTP.Pwd    first
+    FTP.Ftp Close    first
 
 *** Keywords ***
 DB_Delete
