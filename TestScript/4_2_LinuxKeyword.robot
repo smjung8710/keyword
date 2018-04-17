@@ -15,15 +15,15 @@ TC30_SSH_Open Connection
 
 TC31_Example Write
     [Documentation]    Write 키워드 실습.
-    [Setup]    OpenSSH
+    [Setup]    ConnectSSH
     [Template]
     ssh.Write    iptables -P INPUT ACCEPT    #방화벽 오픈
     ssh.Read Until    root@
-    [Teardown]    CloseSSH
+    [Teardown]    DisconnectSSH
 
 TC32_SSH Write Read
     [Documentation]    Write 키워드, Read Until 키워드 실습.
-    [Setup]    OpenSSH
+    [Setup]    ConnectSSH
     [Template]
     ssh.Write    cd /home
     ssh.Write    mkdir automation
@@ -33,17 +33,17 @@ TC32_SSH Write Read
     ${output}=    ssh.Read
     log    output:${output}
     ssh.File Should Exist    /home/automation/test.txt
-    [Teardown]    CloseSSH
+    [Teardown]    DisconnectSSH
 
 TC33_SSH Execute Command
-    [Setup]    OpenSSH
+    [Setup]    ConnectSSH
     ${pwd}=    ssh.Execute Command    pwd
     Should Be Equal    ${pwd}    /root
     ssh.Execute Command    cd /tmp
     ${pwd}=    ssh.Execute Command    pwd
     log    ${pwd}
     Should Not Be Equal    ${pwd}    /tmp
-    [Teardown]    CloseSSH
+    [Teardown]    DisconnectSSH
 
 TC34_SSH Set Client Configuration
     [Setup]
@@ -55,7 +55,7 @@ TC34_SSH Set Client Configuration
     ${output}=    Get Connection
     Should Be Equal As Integers    ${output.timeout}    10
     Should Be Equal As Strings    ${output.alias}    keyword
-    [Teardown]    CloseSSH
+    [Teardown]    DisconnectSSH
 
 TC35_Linux_Diff
     Remote.Create File    /keyword/files.txt    this is file management

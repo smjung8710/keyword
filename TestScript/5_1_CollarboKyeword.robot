@@ -5,16 +5,16 @@ Resource          Resource/common.robot
 
 *** Test Cases ***
 TC50_DB_Connect
-    [Setup]    OpenSSH
+    [Setup]
     DB.Connect To Database    ${DB_API}    ${DB}    ${DB_ID}    ${DB_PW}    ${DB_IP}    ${DB_PORT}
     DB.Check If Exists In Database    SELECT id FROM automation.table WHERE last_name =’musk’;
     DB.Disconnect From Database
-    [Teardown]    CloseSSH
+    [Teardown]
 
 TC_DB_Delete
-    [Setup]    OpenSSH
-    DB_Delete automation.tale
-    [Teardown]    CloseSSH
+    [Setup]    ConnectSSH
+    DB.Delete All Rows From Table    automaton.table
+    [Teardown]    DisconnectSSH
 
 Change Time
     Set hour    Default    12
@@ -22,23 +22,30 @@ Change Time
     Set second    Default    50
 
 TC_DB_Connect_by_SSH
-    [Setup]    OpenSSH
+    [Setup]    ConnectSSH
     SSH.write    sql ${DB_API} ${DB} ${DB_ID} ${DB_PW} ${DB_IP} ${DP_PORT}
     SSH.write    sql \q
-    [Teardown]    CloseSSH
+    [Teardown]    DisconnectSSH
 
 TC_VM_Connect
-    VM.Open Pysphere Connection    ${CENTER1_IP}    ${ID}    ${PWD}
-    VM.Power On Vm    ${mv1}
+    VM.Open Pysphere Connection    ${VCENTER_IP}    ${VM_ID}    ${VM_PW}
+    VM.Power On Vm    OSX_10.11_El_Capitan
+    VM.Power Off Vm    OSX_10.11_El_Capitan
     VM.Close Pysphere Connection
 
-TC_VM_Switch
-    ${my_connection}=    VM.Open Pysphere Connection    ${host1}    ${user}    ${password}
-    VM.Open Pysphere Connection    ${host2}    ${myuser}    ${mypassword}    ${alias}=otherhost
-    VM.Switch Pysphere Connection    ${host1}
-    VM.Power On Vm    ${vm1}
-    VM.Switch Pysphere Connection    ${host2}
-    VM.Power On Vm    ${vm3}
+TC_VM_Snapshot
+    Snapshot Create    OSX_10.11_El_Capitan    A
+    ${ret}    VM.Get Vm Names
+    Should Contain    ${ret}    A
+    Comment    Snapshot Create    sm_win10_x64_1703_192.168.0.104    B
+    Comment    ${ret}    VM.Get Vm Names
+    Comment    Should Contain    ${ret}    B
+    Comment    Snapshot Create    sm_win10_x64_1703_192.168.0.104    C
+    Comment    ${ret}    VM.Get Vm Names
+    Comment    Should Contain    ${ret}    C
+    Comment    Snapshot Revert    B
+    Comment    Snapshot Delete    A
+    Comment    Snapshot Exist
 
 TC_Beatiful
 
@@ -56,3 +63,6 @@ Set second
     DB.Connect To Database    ${DB_API}    ${DB}    ${DB_ID}    ${DB_PW}    ${DB_IP}    5432
     DB.Execute Sql String    update policy set cron_sec=${value} where name=${policy};
     DB.Disconnect From Database
+
+ConnectDB
+    DB.Connect To Database    ${DB_API}    ${DB}    ${DB_ID}    ${DB_PW}    ${DB_IP}    ${DB_PORT}

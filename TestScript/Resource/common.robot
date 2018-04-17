@@ -42,13 +42,17 @@ ${DB_ID}          root
 ${DB_PW}          keyword
 ${DB_IP}          192.168.0.0
 ${DP_PORT}        5432
-&{SHARE}          IP    ID    PWD
+${VM}             ${EMPTY}
+${SNAPSHOT_NAME}    ${EMPTY}
+${VCENTER_IP}     10.2.4.216
+${VM_PW}          !ahnlab0
+${VM_ID}          smjung
 
 *** Keywords ***
 Browser is opened to login page
     Open browser to login page
 
-CloseSSH
+DisconnectSSH
     ssh.Close All Connections
 
 Connect Share Folder
@@ -108,7 +112,7 @@ Open Browser To Login Page
     Sel.Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
 
-OpenSSH
+ConnectSSH
     ssh.Close All Connections    #session init
     ssh.Open Connection    ${HOST}    #try new session connect
     : FOR    ${count}    IN RANGE    20
@@ -146,17 +150,31 @@ Login With Invalid Credentials Should Fail
     Close Browser
 
 Snapshot Create
-    [Documentation]    스냅샷 생성
-    Run Keyword If    '${VMCENTER_IP }'=='${empty}'    Fail    v center 이 비어있습니다.
-    VM.Open Pysphere Connection    ${VMCENTER_IP}    ${ID}    ${PWD}
-    Create Snapshot    ${VM}    ${SNAPSHOT_NAME}
+    [Arguments]    ${VM}    ${SNAPSHOT_NAME}
+    [Documentation]    Create VM snapshot
+    [Tags]    VM
+    Run Keyword If    '${VCENTER_IP}'=='${empty}'    Fail    There is no VCenter
+    VM.Open Pysphere Connection    ${VCENTER_IP}    ${VM_ID}    ${VM_PW}
+    VM.Power On Vm    ${VM}
+    VM.Create Snapshot    ${VM}    ${SNAPSHOT_NAME}
+    Log To Console    starting to create \ Snapshot
 
 Snapshot Delete
-    [Documentation]    VM 스냅샷 삭제
-    open_pysphere_connection    ${VMCENTER_IP}    ${ID}    ${PWD}
-    VM.Close All Pysphere Connections    ${VM}    ${SNAPSHOT_NAME}
+    [Arguments]    ${VM}    ${SNAPSHOT_NAME}
+    [Documentation]    Delete VM snapshot
+    [Tags]    VM
+    VM.Open Pysphere Connection    ${VCENTER_IP}    ${VM_ID}    ${VM_PW}
+    VM.Delete Snapshot    ${VM}    ${SNAPSHOT_NAME}
+    VM.Close All Pysphere Connections
 
 Snapshot Revert
-    [Documentation]    생성한 이름으로 전환
-    VM.Open Pysphere Connection    ${VMCENTER_IP}    ${ID}    ${PWD}
+    [Arguments]    ${SNAPSHOT_NAME}
+    [Documentation]    Revert snapshot
+    [Tags]    VM
+    VM.Open Pysphere Connection    ${VCENTER_IP}    ${VM_ID}    ${VM_PW}
     VM.Revert Vm To Snapshot    ${SNAPSHOT_NAME}
+
+ConnectVM
+    [Arguments]    ${vm}
+    VM.Open Pysphere Connection    ${VCENTER_IP}    ${VM_ID}    ${VM_PW}
+    VM.Power On Vm    ${vm}
