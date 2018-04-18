@@ -6,10 +6,7 @@ import platform
 import os, sys, random
 import csv
 import pywinauto
-import io
 
-sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
-sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s-%(levelname)s - %(message)s')
 logging.debug('Start of program')

@@ -34,20 +34,16 @@ TC_VM_Connect
     VM.Close Pysphere Connection
 
 TC_VM_Snapshot
-    ConnectVM
-    VM.Power On Vm    ${VM_1}
-    Snapshot Create    ${VM_1}    A
-    ${ret}    VM.Get Vm Names
-    Should Contain    ${ret}    A
-    Snapshot Create    ${VM_1}    B
-    ${ret}    VM.Get Vm Names
-    Should Contain    ${ret}    B
-    Snapshot Create    ${VM_1}    C
-    ${ret}    VM.Get Vm Names
-    Should Contain    ${ret}    C
-    Snapshot Revert    B
-    Snapshot Delete    A
-    Snapshot Exist
+    Set Global Variable    ${VM}
+    ConnectVM    ${VM}
+    Snapshot Create    ${VM}    A    #스냅샷 A 생성
+    Wait Until Keyword Succeeds    2m    5s    Snapshot Exist    ${VM}    A
+    Snapshot Create    ${VM}    B    #스냅샷 B 생성
+    Wait Until Keyword Succeeds    2m    5s    Snapshot Exist    ${VM}    B
+    Snapshot Create    ${VM}    C    #스냅샷 C 생성
+    Wait Until Keyword Succeeds    2m    5s    Snapshot Exist    ${VM}    C
+    Snapshot Revert    B    #스냅샷 B로 리버트
+    Snapshot Delete    ${VM}    A    #스냅샷 A 삭제
 
 TC_FTP_Connect
     FTP.Ftp Connect    ${HOST}    ${ID}    ${PW}    timeout=20    ConnId=first
@@ -56,6 +52,25 @@ TC_FTP_Connect
     FTP.Mkd    TEST_SAMPLE    first
     FTP.Pwd    first
     FTP.Ftp Close    first
+
+TC_FTP_Upload
+    Set Global Variable    ${HOST}    192.168.0.104
+    Set Global Variable    ${ID}    keyword
+    Set Global Variable    ${PW}    automation
+    FTP.Ftp Connect    ${HOST}    user=${ID}    password=${PW}    port=21    timeout=20    connId=first
+    FTP.Get Welcome    connId=first
+    ${path}    FTP.Pwd    connId=first
+    FTP.Cwd    ${path}\\TEST_SAMPLE    connId=first
+    @{files}    OS.List Files In Directory    C:\\RF_Template
+    :FOR    ${count}    IN    @{files}
+    \    Log To Console    ${count}
+    \    FTP.Upload File    C:\\RF_Template\\${count}    connId=first
+    FTP.Download File    1.txt    FTP_Test.txt    connId=first
+    FTP.Ftp Close    connId=first
+
+TC_MY_WIN_ChangeName
+   win.Change Under To Blank    C:\\Users\\automation\\test
+   win.Change Blank To Underbar    C:\\Users\\automation\\test
 
 *** Keywords ***
 DB_Delete

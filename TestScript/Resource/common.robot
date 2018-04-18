@@ -19,7 +19,8 @@ Library           ImapLibrary    WITH NAME    Mail
 Library           DiffLibrary    WITH NAME    Diff
 Library           FtpLibrary    WITH NAME    FTP
 Resource          remote.robot    # 원격 라이브러리 사용을 위한 리소스
-Library           MyWebLibrary.py    WITH NAME    my
+Library           MyWebLibrary.py    WITH NAME    web
+Library           MyWinLibrary.py    WITH NAME    win
 
 *** Variables ***
 ${SHARE_IP}       ${EMPTY}
@@ -133,7 +134,7 @@ Welcome Page Should Be Open
     Sel.Title Should Be    Welcome Page
 
 Google_Translate
-    [Arguments]    ${English}    ${Korean}
+    [Arguments]    ${English}    ${Korean}    # 번역대상 | 번역예상결과
     Sel.Open Browser    https://translate.google.co.kr/    gc
     Sel.Title Should Be    Google 번역
     Sel.Input Text    id=source    ${English}
@@ -151,7 +152,7 @@ Login With Invalid Credentials Should Fail
     Close Browser
 
 Snapshot Create
-    [Arguments]    ${VM}    ${SNAPSHOT_NAME}
+    [Arguments]    ${VM}    ${SNAPSHOT_NAME}    # 사용할 Host 이름 | 사용할 스냅샷 이름
     [Documentation]    Create VM snapshot
     [Tags]    VM
     Run Keyword If    '${VCENTER_IP}'=='${empty}'    Fail    There is no VCenter
