@@ -2,6 +2,10 @@
 from calculator import Calculator, CalculationError
 from robot.api.deco import keyword
 import os
+from robot.api import logger
+import logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s-%(levelname)s - %(message)s')
+logging.debug('Start of program')
 
 class KeywordLibrary(object):
     """Test library for testing *Calculator* business logic.
@@ -85,8 +89,21 @@ class KeywordLibrary(object):
 
     def return_two_values(self, arg1, arg2):
         '''키워드 리턴값 실습 예시'''
-        return arg1, agr2
+        return arg1, arg2
 
     def return_multiple_values(self, arg):
         '''키워드 리턴값 3개 실습 예시'''
         return ['a', 'list', 'of', 'strings']
+
+    def keyword_debug(self, arg):
+        '''키워드 디버깅 실습 예시'''
+        logger.debug('Got argument %s' %arg)
+        logger.info('<i>This</i> is a boring example', html=True)
+        logger.console('Hello, console!')
+
+    def keyword_debug2(self, arg):
+        logging.debug('Got argument %s' % arg)
+        logging.info('This is a boring example')
+
+if __name__=='__main__':
+    keyword_debug('keyword testing')

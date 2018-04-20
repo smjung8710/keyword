@@ -18,16 +18,18 @@ TC9_key_Arg
     calkey.Any Int Arguments    100
 
 리턴값 두개 확인
-    ${var1}    ${var2} =    Return Two Values
-    @{list} =    Return Two Values
-    Should Be Equal    ${var1}    first value
-    Should Be Equal    ${var2}    second value
-    Should Be Equal    @{list}[0]    first value
-    Should Be Equal    @{list}[1]    second value
+    ${var1}    ${var2} =    Return Two Values    1    2
+    @{list} =    Return Two Values    1    2
+    Should Be Equal    ${var1}    1
+    Should Be Equal    ${var2}    2
+    Should Be Equal    @{list}[0]    1
+    Should Be Equal    @{list}[1]    2
 
 리턴값 세개 확인
-    ${s1}    ${s2}    @{li} =    Return Multiple Values
-    Should Be Equal    ${s1}     ${s2}    a list
-    Should Be Equal    @{li}[0]     @{li}[1]    of strings
+    ${s1}    ${s2}    @{li} =    Return Multiple Values    1
+    Should Be Equal    ${s1}    a
+    Should Be Equal    ${s2}    list
+    Should Be Equal    @{li}[0]    of
+    Should Be Equal    @{li}[1]    strings
 
 *** Keywords ***

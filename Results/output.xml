@@ -1,38 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180420 20:50:11.190" generator="Robot 3.0.3 (Python 2.7.13 on win32)">
+<robot generated="20180420 21:08:45.951" generator="Robot 3.0.3 (Python 2.7.13 on win32)">
 <suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword" id="s1" name="Keyword">
 <suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript" id="s1-s1" name="TestScript">
 <suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript\6_2_KeywordLibrary.robot" id="s1-s1-s1" name="6 2 KeywordLibrary">
-<test id="s1-s1-s1-t1" name="리턴값 두개 확인">
-<kw name="Return Two Values" library="calkey">
-<doc>키워드 리턴값 실습 예시</doc>
+<test id="s1-s1-s1-t1" name="리턴값 세개 확인">
+<kw name="Return Multiple Values" library="calkey">
+<doc>키워드 리턴값 3개 실습 예시</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
 <assign>
-<var>${var1}</var>
-<var>${var2}</var>
+<var>${s1}</var>
+<var>${s2}</var>
+<var>@{li}</var>
 </assign>
-<msg timestamp="20180420 20:50:11.255" level="FAIL">TypeError: return_two_values() takes no arguments (1 given)</msg>
-<status status="FAIL" endtime="20180420 20:50:11.255" starttime="20180420 20:50:11.254"></status>
+<msg timestamp="20180420 21:08:46.014" level="INFO">${s1} = a</msg>
+<msg timestamp="20180420 21:08:46.014" level="INFO">${s2} = list</msg>
+<msg timestamp="20180420 21:08:46.014" level="INFO">@{li} = [ of | strings ]</msg>
+<status status="PASS" endtime="20180420 21:08:46.015" starttime="20180420 21:08:46.014"></status>
 </kw>
-<status status="FAIL" endtime="20180420 20:50:11.255" critical="yes" starttime="20180420 20:50:11.253">TypeError: return_two_values() takes no arguments (1 given)</status>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${s1}</arg>
+<arg>a</arg>
+</arguments>
+<msg timestamp="20180420 21:08:46.015" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20180420 21:08:46.015" starttime="20180420 21:08:46.015"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${s2}</arg>
+<arg>list</arg>
+</arguments>
+<msg timestamp="20180420 21:08:46.016" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20180420 21:08:46.016" starttime="20180420 21:08:46.016"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>@{li}[0]</arg>
+<arg>of</arg>
+</arguments>
+<msg timestamp="20180420 21:08:46.017" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20180420 21:08:46.017" starttime="20180420 21:08:46.017"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>@{li}[1]</arg>
+<arg>strings</arg>
+</arguments>
+<msg timestamp="20180420 21:08:46.018" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20180420 21:08:46.018" starttime="20180420 21:08:46.017"></status>
+</kw>
+<status status="PASS" endtime="20180420 21:08:46.018" critical="yes" starttime="20180420 21:08:46.012"></status>
 </test>
 <doc>KeywordLibrary를 이용한 키워드 실습</doc>
-<status status="FAIL" endtime="20180420 20:50:11.256" starttime="20180420 20:50:11.245"></status>
+<status status="PASS" endtime="20180420 21:08:46.019" starttime="20180420 21:08:46.005"></status>
 </suite>
-<status status="FAIL" endtime="20180420 20:50:11.258" starttime="20180420 20:50:11.243"></status>
+<status status="PASS" endtime="20180420 21:08:46.021" starttime="20180420 21:08:46.003"></status>
 </suite>
-<status status="FAIL" endtime="20180420 20:50:11.259" starttime="20180420 20:50:11.216"></status>
+<status status="PASS" endtime="20180420 21:08:46.022" starttime="20180420 21:08:45.975"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Keyword" pass="0">Keyword</stat>
-<stat fail="1" id="s1-s1" name="TestScript" pass="0">Keyword.TestScript</stat>
-<stat fail="1" id="s1-s1-s1" name="6 2 KeywordLibrary" pass="0">Keyword.TestScript.6 2 KeywordLibrary</stat>
+<stat fail="0" id="s1" name="Keyword" pass="1">Keyword</stat>
+<stat fail="0" id="s1-s1" name="TestScript" pass="1">Keyword.TestScript</stat>
+<stat fail="0" id="s1-s1-s1" name="6 2 KeywordLibrary" pass="1">Keyword.TestScript.6 2 KeywordLibrary</stat>
 </suite>
 </statistics>
 <errors>
