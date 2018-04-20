@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180420 20:50:11.190" generator="Robot 3.0.3 (Python 2.7.13 on win32)">
+<suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword" id="s1" name="Keyword">
+<suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript" id="s1-s1" name="TestScript">
+<suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript\6_2_KeywordLibrary.robot" id="s1-s1-s1" name="6 2 KeywordLibrary">
+<test id="s1-s1-s1-t1" name="리턴값 두개 확인">
+<kw name="Return Two Values" library="calkey">
+<doc>키워드 리턴값 실습 예시</doc>
+<assign>
+<var>${var1}</var>
+<var>${var2}</var>
+</assign>
+<msg timestamp="20180420 20:50:11.255" level="FAIL">TypeError: return_two_values() takes no arguments (1 given)</msg>
+<status status="FAIL" endtime="20180420 20:50:11.255" starttime="20180420 20:50:11.254"></status>
+</kw>
+<status status="FAIL" endtime="20180420 20:50:11.255" critical="yes" starttime="20180420 20:50:11.253">TypeError: return_two_values() takes no arguments (1 given)</status>
+</test>
+<doc>KeywordLibrary를 이용한 키워드 실습</doc>
+<status status="FAIL" endtime="20180420 20:50:11.256" starttime="20180420 20:50:11.245"></status>
+</suite>
+<status status="FAIL" endtime="20180420 20:50:11.258" starttime="20180420 20:50:11.243"></status>
+</suite>
+<status status="FAIL" endtime="20180420 20:50:11.259" starttime="20180420 20:50:11.216"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Keyword" pass="0">Keyword</stat>
+<stat fail="1" id="s1-s1" name="TestScript" pass="0">Keyword.TestScript</stat>
+<stat fail="1" id="s1-s1-s1" name="6 2 KeywordLibrary" pass="0">Keyword.TestScript.6 2 KeywordLibrary</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

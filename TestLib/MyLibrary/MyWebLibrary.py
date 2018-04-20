@@ -1,5 +1,5 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python
-# -*- coding: cp949 -*-
 
 import platform
 import os, sys, random
@@ -26,6 +26,19 @@ class MyWebLibrary(object):
         loginpw.send_keys(pw)
         loginbutton = chrome.find_element_by_id("login_button")
         loginbutton.send_keys(Keys.ENTER)
+        chrome.quit()
+
+
+def OpenLoginPageChrome_ByXpath(self, id, pw):
+        chrome = webdriver.Chrome()
+        chrome.get("localhost:7272")
+        chrome.implicitly_wait(30)
+        # login id
+        loginid = chrome.find_element_by_xpath("//*[@id='username_field']")
+        loginid.send_keys(id)
+        # login pw
+        loginpw = chrome.find_element_by_xpath("//*[@id='password_field']")
+        loginpw.send_keys(pw, Keys.ENTER)
         chrome.quit()
 
 def soup_file(self, file):

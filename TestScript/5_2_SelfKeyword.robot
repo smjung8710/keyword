@@ -42,58 +42,6 @@ Simple calculation2
     Push button    =
     Result should be    3
 
-TC1_abnormal
-    Run Keyword And Ignore Error    cal.Push Button    100
-    cal.Should Cause Error    Invalid button 100
-
-TC2_Try
-    cal.Push Button    1
-    cal.Push Button    +
-    cal.Push Button    2
-    cal.Push Button    =
-    cal.Result Should Be    3
-
-TC3_Invalid expression
-    cal.Push Button    1
-    cal.Push Button    +
-    Run Keyword And Ignore Error    cal.Push Button    0.2
-    Run Keyword And Ignore Error    cal.Push Button    =
-    cal.Should Cause Error    SysntaxError
-
-TC4_Division by zero
-    cal.Push Button    1
-    cal.Push Button    /
-    cal.Push Button    0
-    Run Keyword And Ignore Error    cal.Push Button    =
-    cal.Should Cause Error    Division by zero.
-
-TC5_Button C
-    cal.Push Button    9
-    cal.Push Button    C
-    cal.Result Should Be    ${EMPTY}
-
-TC6_divide
-    cal.Push Button    6
-    cal.Push Button    /
-    cal.Push Button    4
-    cal.Push Button    =
-    cal.Result Should Be    1
-
-TC7_normal
-    cal.Push Button    5
-    cal.Push Button    +
-    cal.Push Button    4
-    cal.Push Button    -
-    cal.Push Button    3
-    cal.Push Button    *
-    cal.Push Button    2
-    cal.Push Button    /
-    cal.Push Button    1
-    cal.Push Button    =
-    cal.Result Should Be    3
-
-Calculation
-    Push buttons    5 + 4 - 3 * 2 / 1 =
 
 BDD_Addition
     Given calculator has been cleared
