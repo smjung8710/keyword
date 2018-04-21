@@ -8,7 +8,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 import requests
-
+from robot.api import ExecutionResult
 import logging
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s-%(levelname)s - %(message)s')
@@ -18,6 +18,7 @@ from robot.output import Output as result
 
 class MyWebLibrary(object):
 
+    ROBOT_LIBRARY_SCOPE = 'TEST SUITE'
     def OpenLoginPageChrome (self, id, pw):
         ''' id 엘리멘트를 이용한 테스트 웹서버 로그인
         '''
@@ -72,7 +73,6 @@ class MyWebLibrary(object):
     def check_title(self, path, expected):
          ''' 웹페이지 파일에서 타이틀 확인 키워드
          '''
-
          if "http" in path:
               res=requests.get(path)
               res.raise_for_status()
@@ -81,11 +81,9 @@ class MyWebLibrary(object):
               if expected in title:
                   print "Pass URL"
                   return True
-
               else:
-                  print "Fail URL. There is no title"
-                  ROBOT_EXIT_ON_FAILURE = True
-                  return False
+                  raise AssertionError("Fail URL. There is no title")
+
          else:
              with open(path) as page:
                  soup= BeautifulSoup(page,'html.parser')
@@ -94,9 +92,7 @@ class MyWebLibrary(object):
                  print "Pass FILE"
                  return True
              else:
-                 print "Fail FILE. There is no title"
-                 return False
-
+                 raise AssertionError("Fail FAIL. There is no title")
 
 if __name__ == "__main__":
     test = MyWebLibrary()

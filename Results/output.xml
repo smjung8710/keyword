@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180421 18:39:14.044" generator="Robot 3.0.3 (Python 2.7.13 on win32)">
+<robot generated="20180421 19:03:51.937" generator="Robot 3.0.3 (Python 2.7.13 on win32)">
 <suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword" id="s1" name="Keyword">
 <suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript" id="s1-s1" name="TestScript">
 <suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript\6_3_SelfKeyword.robot" id="s1-s1-s1" name="6 3 SelfKeyword">
-<test id="s1-s1-s1-t1" name="TC_My_title">
+<test id="s1-s1-s1-t1" name="TC_B4_title">
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
-<status status="PASS" endtime="20180421 18:39:19.448" starttime="20180421 18:39:19.448"></status>
+<status status="PASS" endtime="20180421 19:03:57.220" starttime="20180421 19:03:57.220"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -15,7 +15,7 @@
 <arg>C:\\WebServer\\html\\index.html</arg>
 <arg>Login Page</arg>
 </arguments>
-<status status="PASS" endtime="20180421 18:39:19.449" starttime="20180421 18:39:19.449"></status>
+<status status="PASS" endtime="20180421 19:03:57.221" starttime="20180421 19:03:57.221"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -24,7 +24,7 @@
 <arg>C:\\WebServer\\html\\error.html</arg>
 <arg>Error Page</arg>
 </arguments>
-<status status="PASS" endtime="20180421 18:39:19.450" starttime="20180421 18:39:19.449"></status>
+<status status="PASS" endtime="20180421 19:03:57.222" starttime="20180421 19:03:57.221"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -33,11 +33,11 @@
 <arg>C:\\WebServer\\html\\welcome.html</arg>
 <arg>Welcome Page</arg>
 </arguments>
-<status status="PASS" endtime="20180421 18:39:19.451" starttime="20180421 18:39:19.450"></status>
+<status status="PASS" endtime="20180421 19:03:57.222" starttime="20180421 19:03:57.222"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
-<status status="PASS" endtime="20180421 18:39:19.451" starttime="20180421 18:39:19.451"></status>
+<status status="PASS" endtime="20180421 19:03:57.223" starttime="20180421 19:03:57.223"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -46,7 +46,7 @@
 <arg>http://localhost:7272/index.html</arg>
 <arg>Login Page</arg>
 </arguments>
-<status status="PASS" endtime="20180421 18:39:19.452" starttime="20180421 18:39:19.452"></status>
+<status status="PASS" endtime="20180421 19:03:57.224" starttime="20180421 19:03:57.223"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -55,7 +55,7 @@
 <arg>http://localhost:7272/error.html</arg>
 <arg>Error Page</arg>
 </arguments>
-<status status="PASS" endtime="20180421 18:39:19.453" starttime="20180421 18:39:19.452"></status>
+<status status="PASS" endtime="20180421 19:03:57.224" starttime="20180421 19:03:57.224"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -64,7 +64,7 @@
 <arg>http://localhost:7272/welcome.html</arg>
 <arg>Welcome Page</arg>
 </arguments>
-<status status="PASS" endtime="20180421 18:39:19.453" starttime="20180421 18:39:19.453"></status>
+<status status="PASS" endtime="20180421 19:03:57.225" starttime="20180421 19:03:57.225"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -73,7 +73,7 @@
 <arg>https://www.google.com/</arg>
 <arg>Google</arg>
 </arguments>
-<status status="PASS" endtime="20180421 18:39:19.454" starttime="20180421 18:39:19.454"></status>
+<status status="PASS" endtime="20180421 19:03:57.226" starttime="20180421 19:03:57.225"></status>
 </kw>
 <kw name="Comment" library="BuiltIn">
 <doc>Displays the given messages in the log file as keyword arguments.</doc>
@@ -82,7 +82,7 @@
 <arg>https://mail.google.com</arg>
 <arg>Gmail</arg>
 </arguments>
-<status status="PASS" endtime="20180421 18:39:19.455" starttime="20180421 18:39:19.454"></status>
+<status status="PASS" endtime="20180421 19:03:57.226" starttime="20180421 19:03:57.226"></status>
 </kw>
 <kw name="Check Title" library="web">
 <doc>웹페이지 파일에서 타이틀 확인 키워드</doc>
@@ -93,45 +93,36 @@
 <assign>
 <var>${ret}</var>
 </assign>
-<msg timestamp="20180421 18:39:19.754" level="INFO">Fail URL. There is no title</msg>
-<msg timestamp="20180421 18:39:19.755" level="INFO">${ret} = False</msg>
-<status status="PASS" endtime="20180421 18:39:19.755" starttime="20180421 18:39:19.455"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${ret}</arg>
-</arguments>
-<msg timestamp="20180421 18:39:19.757" level="INFO">False</msg>
-<status status="PASS" endtime="20180421 18:39:19.757" starttime="20180421 18:39:19.755"></status>
+<msg timestamp="20180421 19:03:57.513" level="FAIL">Fail URL. There is no title</msg>
+<status status="FAIL" endtime="20180421 19:03:57.513" starttime="20180421 19:03:57.227"></status>
 </kw>
 <tags>
 <tag>Self</tag>
 </tags>
-<status status="PASS" endtime="20180421 18:39:19.757" critical="yes" starttime="20180421 18:39:19.447"></status>
+<status status="FAIL" endtime="20180421 19:03:57.515" critical="yes" starttime="20180421 19:03:57.219">Fail URL. There is no title</status>
 </test>
 <doc>자체 제작한 ``CalculatorLibrary.py``라이브러리를 이용하여 테스트 케이스 작성한 사례입니다.</doc>
-<status status="PASS" endtime="20180421 18:39:19.758" starttime="20180421 18:39:14.111"></status>
+<status status="FAIL" endtime="20180421 19:03:57.516" starttime="20180421 19:03:51.998"></status>
 </suite>
-<status status="PASS" endtime="20180421 18:39:19.762" starttime="20180421 18:39:14.109"></status>
+<status status="FAIL" endtime="20180421 19:03:57.520" starttime="20180421 19:03:51.996"></status>
 </suite>
-<status status="PASS" endtime="20180421 18:39:19.763" starttime="20180421 18:39:14.081"></status>
+<status status="FAIL" endtime="20180421 19:03:57.521" starttime="20180421 19:03:51.968"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
-<stat fail="0" pass="1">Self</stat>
+<stat fail="1" pass="0">Self</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Keyword" pass="1">Keyword</stat>
-<stat fail="0" id="s1-s1" name="TestScript" pass="1">Keyword.TestScript</stat>
-<stat fail="0" id="s1-s1-s1" name="6 3 SelfKeyword" pass="1">Keyword.TestScript.6 3 SelfKeyword</stat>
+<stat fail="1" id="s1" name="Keyword" pass="0">Keyword</stat>
+<stat fail="1" id="s1-s1" name="TestScript" pass="0">Keyword.TestScript</stat>
+<stat fail="1" id="s1-s1-s1" name="6 3 SelfKeyword" pass="0">Keyword.TestScript.6 3 SelfKeyword</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20180421 18:39:17.402" level="ERROR">Error in file 'C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript\Resource\remote.robot': Getting keyword names from library 'Remote' failed: Calling dynamic method 'get_keyword_names' failed: Connecting remote server at http://127.0.0.1:8270 failed: [Errno 10061] </msg>
+<msg timestamp="20180421 19:03:55.242" level="ERROR">Error in file 'C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript\Resource\remote.robot': Getting keyword names from library 'Remote' failed: Calling dynamic method 'get_keyword_names' failed: Connecting remote server at http://127.0.0.1:8270 failed: [Errno 10061] </msg>
 </errors>
 </robot>

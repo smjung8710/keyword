@@ -52,7 +52,7 @@ TC7_normal
     cal.Push Button    /
     cal.Push Button    1
     cal.Push Button    =
-    cal.Result Should Be    3
+    cal.Result Should Be    6
 
 TC_Calculation
     Push buttons    5 + 4 - 3 * 2 / 1 =
