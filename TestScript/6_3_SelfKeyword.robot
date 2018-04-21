@@ -1,0 +1,25 @@
+*** Settings ***
+Documentation     자체 제작한 ``CalculatorLibrary.py``라이브러리를 이용하여 테스트 케이스 작성한 사례입니다.
+Force Tags        Self
+Resource          Resource/common.robot
+
+*** Test Cases ***
+SMTP Email
+    mail.Send Mail    test@gmail.com    password    test@naver.com    RFTEST    withRF
+
+TC_B4_title
+    Comment    #서버 적용전 파일로 타이틀 확인
+    Comment    web.Check Title    C:\\WebServer\\html\\index.html    Login Page
+    Comment    web.Check Title    C:\\WebServer\\html\\error.html    Error Page
+    Comment    web.Check Title    C:\\WebServer\\html\\welcome.html    Welcome Page
+    Comment    #서버 타이틀 확인
+    Comment    web.Check Title    http://localhost:7272/index.html    Login Page
+    Comment    web.Check Title    http://localhost:7272/error.html    Error Page
+    Comment    web.Check Title    http://localhost:7272/welcome.html    Welcome Page
+    #구글 타이틀 확인
+    Comment    web.Check Title    https://www.google.com/    Google
+    Comment    web.Check Title    https://mail.google.com    Gmail
+    ${ret}    web.Check Title    https://translate.google.com/    Google 번역
+    log    ${ret}
+
+*** Keywords ***

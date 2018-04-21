@@ -10,7 +10,8 @@ ${APP}            Microsoft.WindowsCalculator_8wekyb3d8bbwe!App
 
 *** Test Cases ***
 TC42_OrangeDemoApp
-    APP.Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=42f2df1e8dbc8fe7    platformVersion=4.4.2    app=C:\\Users\\automation\\keyword\\TestTool\\4_5_App\\demoapp\\OrangeDemoApp.apk    automationName=Appium
+    ${app}    Set Variable    C:\\demoapp\\OrangeDemoApp.apk
+    APP.Open Application    http://localhost:4723/wd/hub    platformName=Android    deviceName=358705080768726    platformVersion=4.4.2    app=${app}    automationName=Appium
     ...    appPackage=com.netease.qa.orangedemo    appActivity=MainActivity
     APP.Capture Page Screenshot    demo.png
     APP.Page Should Contain Text    Orange_Demo

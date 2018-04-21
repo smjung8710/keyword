@@ -8,19 +8,18 @@ Library           Screenshot    # 표준 라이브러리
 Library           String    # 표준 라이브러리
 Library           Telnet    # 표준 라이브러리
 Library           XML    # 표준 라이브러리
+Resource          remote.robot    # 원격 라이브러리 사용을 위한 리소스
 Library           AutoItLibrary    WITH NAME    AI    # 오토잇라이브러리
+Library           DiffLibrary    WITH NAME    Diff
 Library           SSHLibrary    WITH NAME    ssh    # Linux, Mac 연결
 Library           Selenium2Library    run_on_failure=Sel.Capture Page Screenshot    WITH NAME    Sel    # Web Browser 테스트 라이브러리
-Library           CalculatorLibrary.py    WITH NAME    Cal    # 자체 제작 라이브러리
 Library           AppiumLibrary    WITH NAME    App    # 모바일 앱 테스트 라이브러리
 Library           DatabaseLibrary    WITH NAME    DB    # 데이터베이스 라이브러리
 Library           PysphereLibrary    WITH NAME    VM
-Library           ImapLibrary    WITH NAME    Mail
-Library           DiffLibrary    WITH NAME    Diff
-Resource          remote.robot    # 원격 라이브러리 사용을 위한 리소스
-Library           MyWebLibrary.py    WITH NAME    my
+Library           EmailLibrary    WITH NAME    Mail
 Library           FtpLibrary    WITH NAME    FTP
-Resource          remote.robot    # 원격 라이브러리 사용을 위한 리소스
+Library           RequestsLibrary    WITH NAME    req
+Library           CalculatorLibrary.py    WITH NAME    Cal    # 자체 제작 라이브러리
 Library           MyWebLibrary.py    WITH NAME    web
 Library           MyWinLibrary.py    WITH NAME    win
 
@@ -32,21 +31,21 @@ ${HOST}           8.8.8.8
 ${SSH_USERNAME}    root
 ${SSH_PASSWORD}    keyword
 ${7-zip Path}     C:\\Program Files\\7-Zip
-${SERVER}         localhost:7272    # WebServer URL
+${SERVER}         http://localhost:7272    # WebServer URL
 ${BROWSER}        gc    # Test Web Browser
 ${DELAY}          0
 ${VALID USER}     demo    # WebServer valid ID
 ${VALID PASSWORD}    mode    # WebServer Valid Password
-${LOGIN URL}      http://${SERVER}/    # \ WebServer Login Page
-${WELCOME URL}    http://${SERVER}/welcome.html    # \ WebServer Welcome Page
-${ERROR URL}      http://${SERVER}/error.html    # \ WebServer Error Page
+${LOGIN URL}      ${SERVER}/    # \ WebServer Login Page
+${WELCOME URL}    ${SERVER}/welcome.html    # \ WebServer Welcome Page
+${ERROR URL}      ${SERVER}/error.html    # \ WebServer Error Page
 ${DB_API}         psycopg2
 ${DB}             mydb
 ${DB_ID}          root
 ${DB_PW}          keyword
 ${DB_IP}          192.168.0.0
 ${DP_PORT}        5432
-&{SHARE}          IP    ID    PWD
+&{SHARE}          IP=    ID=    PWD=
 ${VM}             ${EMPTY}
 ${SNAPSHOT_NAME}    ${EMPTY}
 ${VCENTER_IP}     10.2.4.216

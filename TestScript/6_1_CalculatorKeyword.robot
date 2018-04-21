@@ -54,7 +54,24 @@ TC7_normal
     cal.Push Button    =
     cal.Result Should Be    3
 
-Calculation
+TC_Calculation
     Push buttons    5 + 4 - 3 * 2 / 1 =
 
+TC_BDD_Addition
+    Given calculator has been cleared
+    When user types "1 + 1"
+    and user pushes equals
+    Then result is "2"
+
 *** Keywords ***
+Calculator has been cleared
+    Push button    C
+
+User types "${expression}"
+    Push buttons    ${expression}
+
+User pushes equals
+    Push button    =
+
+Result is "${result}"
+    Result should be    ${result}

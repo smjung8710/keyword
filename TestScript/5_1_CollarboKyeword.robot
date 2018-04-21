@@ -62,15 +62,34 @@ TC_FTP_Upload
     ${path}    FTP.Pwd    connId=first
     FTP.Cwd    ${path}\\TEST_SAMPLE    connId=first
     @{files}    OS.List Files In Directory    C:\\RF_Template
-    :FOR    ${count}    IN    @{files}
+    : FOR    ${count}    IN    @{files}
     \    Log To Console    ${count}
     \    FTP.Upload File    C:\\RF_Template\\${count}    connId=first
     FTP.Download File    1.txt    FTP_Test.txt    connId=first
     FTP.Ftp Close    connId=first
 
-TC_MY_WIN_ChangeName
-   win.Change Under To Blank    C:\\Users\\automation\\test
-   win.Change Blank To Underbar    C:\\Users\\automation\\test
+TC_Request_Connect
+    [Tags]    req
+    ${ret_webserver}    req.Create Session    webserver    ${SERVER}
+    ${ret_google}    req.Create Session    google    http://www.google.com
+    log many    ${ret_webserver}
+    log many    ${ret_google}
+
+TC_Request_Get
+    [Tags]    req
+    #구글 응답 결과
+    req.Create Session    google    http://www.google.com
+    ${resp}=    Get Request    google    /
+    Should Be Equal As Strings    ${resp.status_code}    200
+    #구글맵 응답 정보
+    req.Create Session    map    https://developers.google.com
+    ${resp}=    Get Request    map    /maps/documentation/geocoding/intro?hl=ko
+    log    ${resp.status_code}
+    log    ${resp.headers}
+    log    ${resp.encoding}
+    log    ${resp.cookies}
+    log    ${resp.content}
+    log    ${resp.text}    #한국어 인코딩 적용
 
 *** Keywords ***
 DB_Delete

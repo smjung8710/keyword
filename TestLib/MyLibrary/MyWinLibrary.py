@@ -65,6 +65,8 @@ class MyWinLibrary(object):
 
 
     def readcsv(self,file):
+        ''' csv 라이브러리 
+        '''
         with open(file) as filename:
             csvfile=csv.reader(filename)
             csvData=list(csvfile)
