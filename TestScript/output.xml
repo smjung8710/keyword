@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180426 08:58:20.026" generator="Robot 3.0.3 (Python 2.7.13 on win32)">
+<suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript\6_3_SelfKeyword.robot" id="s1" name="6 3 SelfKeyword">
+<test id="s1-t1" name="TC_MY_WIN_ChangeName">
+<kw name="Change Under To Blank" library="win">
+<arguments>
+<arg>C:\\Users\\automation\\test</arg>
+</arguments>
+<msg timestamp="20180426 08:58:25.424" level="INFO">[u'file_is_0.182144_th.csv', u'file_is_0.191621_th.csv', u'file_is_0.231251_th.csv', u'file_is_0.301816_th.csv', u'file_is_0.335840_th.csv', u'file_is_0.558106_th.csv', u'file_is_0.615676_th.csv', u'file_is_0.717724_th.csv', u'file_is_0.867505_th.csv']
+[u'file is 0.182144 th.csv', u'file is 0.191621 th.csv', u'file is 0.231251 th.csv', u'file is 0.301816 th.csv', u'file is 0.335840 th.csv', u'file is 0.558106 th.csv', u'file is 0.615676 th.csv', u'file is 0.717724 th.csv', u'file is 0.867505 th.csv']</msg>
+<status status="PASS" endtime="20180426 08:58:25.424" starttime="20180426 08:58:25.309"></status>
+</kw>
+<kw name="Change Blank To Underbar" library="win">
+<arguments>
+<arg>C:\\Users\\automation\\test</arg>
+</arguments>
+<msg timestamp="20180426 08:58:25.428" level="INFO">[u'file is 0.182144 th.csv', u'file is 0.191621 th.csv', u'file is 0.231251 th.csv', u'file is 0.301816 th.csv', u'file is 0.335840 th.csv', u'file is 0.558106 th.csv', u'file is 0.615676 th.csv', u'file is 0.717724 th.csv', u'file is 0.867505 th.csv']
+[u'file_is_0.182144_th.csv', u'file_is_0.191621_th.csv', u'file_is_0.231251_th.csv', u'file_is_0.301816_th.csv', u'file_is_0.335840_th.csv', u'file_is_0.558106_th.csv', u'file_is_0.615676_th.csv', u'file_is_0.717724_th.csv', u'file_is_0.867505_th.csv']</msg>
+<status status="PASS" endtime="20180426 08:58:25.428" starttime="20180426 08:58:25.424"></status>
+</kw>
+<tags>
+<tag>Self</tag>
+</tags>
+<status status="PASS" endtime="20180426 08:58:25.429" critical="yes" starttime="20180426 08:58:25.308"></status>
+</test>
+<test id="s1-t2" name="SMTP Email">
+<kw name="Send Mail" library="Mail">
+<arguments>
+<arg>test@gmail.com</arg>
+<arg>password</arg>
+<arg>test@naver.com</arg>
+<arg>RFTEST</arg>
+<arg>withRF</arg>
+</arguments>
+<msg timestamp="20180426 08:58:27.598" level="FAIL">SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials s2sm34480928pfb.66 - gsmtp')</msg>
+<status status="FAIL" endtime="20180426 08:58:27.598" starttime="20180426 08:58:25.430"></status>
+</kw>
+<tags>
+<tag>Self</tag>
+</tags>
+<status status="FAIL" endtime="20180426 08:58:27.599" critical="yes" starttime="20180426 08:58:25.430">SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials s2sm34480928pfb.66 - gsmtp')</status>
+</test>
+<test id="s1-t3" name="TC_B4_title">
+<kw name="my.Check Title">
+<arguments>
+<arg>C:\\WebServer\\html\\index.html</arg>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20180426 08:58:27.612" level="FAIL">No keyword with name 'my.Check Title' found.</msg>
+<status status="FAIL" endtime="20180426 08:58:27.612" starttime="20180426 08:58:27.612"></status>
+</kw>
+<tags>
+<tag>Self</tag>
+</tags>
+<status status="FAIL" endtime="20180426 08:58:27.613" critical="yes" starttime="20180426 08:58:27.600">No keyword with name 'my.Check Title' found.</status>
+</test>
+<doc>자체 제작한 ``CalculatorLibrary.py``라이브러리를 이용하여 테스트 케이스 작성한 사례입니다.</doc>
+<status status="FAIL" endtime="20180426 08:58:27.614" starttime="20180426 08:58:20.029"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="2" pass="1">Critical Tests</stat>
+<stat fail="2" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="2" pass="1">Self</stat>
+</tag>
+<suite>
+<stat fail="2" id="s1" name="6 3 SelfKeyword" pass="1">6 3 SelfKeyword</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180426 08:58:23.331" level="ERROR">Error in file 'C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript\Resource\remote.robot': Getting keyword names from library 'Remote' failed: Calling dynamic method 'get_keyword_names' failed: Connecting remote server at http://127.0.0.1:8270 failed: [Errno 10061] </msg>
+</errors>
+</robot>

@@ -53,6 +53,14 @@ ${VM_PW}          !ahnlab0
 ${VM_ID}          smjung
 
 *** Keywords ***
+There is file.ext file in dir folder
+    [Arguments]    ${file}    ${ext}    ${dir}
+    ${ret}=    Run Keyword And Return Status    OS.Directory Should Exist    C:\\${dir}
+    Run Keyword If    '${ret}'=='False'    OS.Create Directory    C:\\${dir}
+    OS.Directory Should Exist    C:\\${dir}    No Directory
+    OS.Create File    C:\\${dir}\\${file}.${ext}
+    OS.File Should Exist    C:\\${dir}\\${file}.${ext}    No Files
+
 Browser is opened to login page
     Open browser to login page
 

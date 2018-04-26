@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#MyWebLibrary.py
 
 
 import platform
@@ -20,7 +21,9 @@ class MyWebLibrary(object):
 
     ROBOT_LIBRARY_SCOPE = 'TEST SUITE'
     def OpenLoginPageChrome (self, id, pw):
-        ''' id 엘리멘트를 이용한 테스트 웹서버 로그인
+        '''
+        [selenium 실습]
+        id 엘리멘트를 이용한 테스트 웹서버 로그인
         '''
         chrome = webdriver.Chrome()
         chrome.get("localhost:7272")
@@ -34,7 +37,9 @@ class MyWebLibrary(object):
         chrome.quit()
 
     def OpenLoginPageChrome_ByXpath(self, id, pw):
-        ''' xpath 엘리멘트를 이용한 테스트 웹서버 로그인
+        '''
+        [selenium 실습]
+        xpath 엘리멘트를 이용한 테스트 웹서버 로그인
         '''
         chrome = webdriver.Chrome()
         chrome.get("localhost:7272")
@@ -48,30 +53,48 @@ class MyWebLibrary(object):
         chrome.quit()
 
     def soup_file(self, file):
-        ''' 웹 페이지 파일 file을 이용한 파싱 키워드
+        '''
+        [BeautifulSoup 실습]
+        웹 페이지 파일 file을 이용한 파싱 키워드
         '''
         with open(file) as page:
             soup= BeautifulSoup(page,'html.parser')
             print(soup.prettify())
 
+    def soup_tag(self, file):
+        '''
+        [BeautifulSoup 실습]
+        파일을 이용하여 태그를 이용한 페이지 상세 파싱 키워드
+        '''
+        with open(file) as page:
+            soup= BeautifulSoup(page,'html.parser')
+
+        #print(soup.head)
+        #print(soup.title)
+        #print(soup.link)
+        #print(soup.script)
+        #print(soup.body)
+        #print(soup.body.div)
+        #print(soup.body.h1)
+        #print(soup.body.p)
+        print(soup.body.div.table) #.prettify())
+        #print(soup.body.form)
+        return soup
+
     def soup_url(self,url):
-        ''' 웹 페이지 주소 url를 이용한 파싱 키워드
+        '''
+        [BeautifulSoup 실습]
+        웹 페이지 주소 url를 이용한 파싱 키워드
         '''
         res=requests.get(url)
         res.raise_for_status()
         soup= BeautifulSoup(res.text, 'html.parser')
         print(soup)
 
-    def soup_tag(self, file, tag):
-        ''' 태그를 이용한 페이지 상세 파싱 키워드
-        '''
-        with open(file) as page:
-            soup= BeautifulSoup(page,'html.parser')
-            ret = os.patch.join(soup.tag)
-        print(ret)
-
     def check_title(self, path, expected):
-         ''' 웹페이지 파일에서 타이틀 확인 키워드
+         '''
+         [BeautifulSoup 실습]
+         웹페이지 파일(url, file)에서 타이틀 확인 키워드
          '''
          if "http" in path:
               res=requests.get(path)
@@ -99,9 +122,11 @@ if __name__ == "__main__":
     #test.OpenLoginPageChrome('demo','mode')
     #test.soup_file('C:\WebServer\html\index.html')
     #test.soup_url("http://localhost:7272/")
-    test.check_title("http://localhost:7272/index.html", "Lg")
-    test.check_title("C:\WebServer\html\index.html", "Lon")
+    #test.soup_tag('C:\WebServer\html\index.html')
+    soup=test.soup_tag('C:\WebServer\html\index.html')
+    print(soup.title)
+    print(soup.find_all('title'))
+    print(soup.select('title'))
 
-    #print(soup.title)
-    #print(soup.find_all('title'))
-    #print(soup.select('title'))
+    #test.check_title("http://localhost:7272/index.html", "Lg")
+    #test.check_title("C:\WebServer\html\index.html", "Lon")

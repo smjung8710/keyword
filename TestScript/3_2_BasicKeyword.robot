@@ -18,40 +18,20 @@ TC2_Variable_Set
     [Documentation]    변수 선언 예시
     ...
     ...    2장 RF의 [3.3 Add Variable]의 변수 예제 테스트 케이스”Scalar Variable Item”, “List Variable Item”, “Dict Variable Item”입니다. ”Scalar Variable Item”, “List Variable Item”, “Dict Variable Item” 3개의 테스트 케이스를 1개의 테스트케이스로 합친 것입니다.
-<<<<<<< HEAD
-=======
     [Tags]    Variable
->>>>>>> 55029b995a074e4acccb3b0f701254fc20b30404
     [Setup]
-    #scalar variable
-    Log many    Scalar:    ${USER_NAME}    ${USER_PASS}    name:${USER_NAME}
-    #list variable
-    Log many    List: @{USER1}    name: @{USER1}[0]    #리스트에서 배열 순서로 구분
-    #dictionary variable
-    Log many    Dictionary: &{USER2}    name: &{USER2}[name]    #딕셔너리 변수에서 이름으로 구분
-    #지역변수로 변경
-    ${USER_NAME}    ${USER_PASS}    Set Variable    keyword    automation
-    #전역변수로 변경
-    Set Global Variable    @{USER1}    keyword    automation
-    #지역변수로 변경
-    Set Global Variable    &{USER2}    name=keyword    pass=automation
-<<<<<<< HEAD
-=======
     Log To Console    scalar:${USER_NAME}
     Log To Console    scalar:${USER_PASS}
     Log To Console    list:@{USER1}
     Log To Console    dic:&{USER2}
->>>>>>> 55029b995a074e4acccb3b0f701254fc20b30404
     [Teardown]
 
 TC3_Variable_Check
     [Documentation]    variable option example
     [Tags]    Variable
     Log Many    scalar:${USER_NAME}    scalar:${USER_PASS}    list:@{USER1}    dic:&{USER2}
-<<<<<<< HEAD
 
 TC4_Variable_List_Dic
-=======
     Log To Console    scalar:${USER_NAME}
     Log To Console    scalar:${USER_PASS}
     Log To Console    list:@{USER1}
@@ -59,7 +39,6 @@ TC4_Variable_List_Dic
 
 TC4_Variable_List_Dic
     [Tags]    list
->>>>>>> 55029b995a074e4acccb3b0f701254fc20b30404
     #리스트 변수
     @{list} =    Set Variable    a    b    c
     @{list2} =    Create List    a    b    c
@@ -74,10 +53,7 @@ TC4_Variable_List_Dic
 
 TC5_Template
     [Documentation]    test
-<<<<<<< HEAD
-=======
     [Tags]    Template    continue    ftp
->>>>>>> 55029b995a074e4acccb3b0f701254fc20b30404
     [Template]    There is file.ext file in dir folder
     #file index    #ext    #dir
     1    txt    RF_Template
@@ -92,10 +68,7 @@ TC5_Template
     10    7zip    RF_Template
 
 TC6_For Loop
-<<<<<<< HEAD
-=======
     [Tags]    loop
->>>>>>> 55029b995a074e4acccb3b0f701254fc20b30404
     ${path}=    Set Variable    C:\\Python27
     @{elements}    OS.List Directories In Directory    ${path}
     : FOR    ${directory}    IN    @{elements}
@@ -104,12 +77,10 @@ TC6_For Loop
     \    log many    &{list}
 
 TC7_Loop_condition
-<<<<<<< HEAD
     ${output}=    Connect Share Folder    ${SHARE_IP}    ${SHARE_ID}    ${SHARE_PWD}
     Run Keyword If    '${output}'!='0'    Fatal Error    Pass Execution
 
 TC8_Loop_Simple
-=======
     [Tags]    loop
     ${output}=    Connect Share Folder    ${SHARE_IP}    ${SHARE_ID}    ${SHARE_PWD}
     Run Keyword If    '${output}'!='0'    Fatal Error    Pass Execution
@@ -126,7 +97,6 @@ TC8_Loop_continue
 
 TC8_Loop_Repeat
     [Tags]    loop
->>>>>>> 55029b995a074e4acccb3b0f701254fc20b30404
     Repeat Keyword    5    OS.Run And Return Rc    net use \\\\${IP} /user:${ID} ${PWD} /PERSISTENT:YES
 
 TC9_Argument_Tag
@@ -138,14 +108,10 @@ TC10_Argument_Variable
     [Documentation]    Vaiable example
     [Tags]
     ${local_host}=    Set Variable    9.9.9.9
-<<<<<<< HEAD
-    Log    global host-${HOST}
-    Log    local host-${local_host}
-=======
     Log Many    global host-${HOST}    local host-${local_host}
     Log To Console    global host-${HOST}
     Log To Console    local host-${local_host}
->>>>>>> 55029b995a074e4acccb3b0f701254fc20b30404
+
 
 *** Keywords ***
 There is file.ext file in dir folder

@@ -4,6 +4,17 @@ Force Tags        Self
 Resource          Resource/common.robot
 
 *** Test Cases ***
+TC_MY_WIN_ChangeName
+    win.Change Under To Blank    C:\\Users\\automation\\test
+    win.Change Blank To Underbar    C:\\Users\\automation\\test
+
+TC_Check_Platform
+    [Documentation]    autoit library로 사용했던 방식을 유저 라이브러리로 작성
+    ${arch}=    win.Get_Platform_Info
+    log    ${arch}
+
+TC_Read_csv_file
+
 SMTP Email
     mail.Send Mail    test@gmail.com    password    test@naver.com    RFTEST    withRF
 

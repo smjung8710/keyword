@@ -1,128 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180421 19:03:51.937" generator="Robot 3.0.3 (Python 2.7.13 on win32)">
+<robot generated="20180426 10:00:17.087" generator="Robot 3.0.3 (Python 2.7.13 on win32)">
 <suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword" id="s1" name="Keyword">
 <suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript" id="s1-s1" name="TestScript">
 <suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript\6_3_SelfKeyword.robot" id="s1-s1-s1" name="6 3 SelfKeyword">
-<test id="s1-s1-s1-t1" name="TC_B4_title">
-<kw name="Comment" library="BuiltIn">
-<doc>Displays the given messages in the log file as keyword arguments.</doc>
-<status status="PASS" endtime="20180421 19:03:57.220" starttime="20180421 19:03:57.220"></status>
-</kw>
-<kw name="Comment" library="BuiltIn">
-<doc>Displays the given messages in the log file as keyword arguments.</doc>
-<arguments>
-<arg>web.Check Title</arg>
-<arg>C:\\WebServer\\html\\index.html</arg>
-<arg>Login Page</arg>
-</arguments>
-<status status="PASS" endtime="20180421 19:03:57.221" starttime="20180421 19:03:57.221"></status>
-</kw>
-<kw name="Comment" library="BuiltIn">
-<doc>Displays the given messages in the log file as keyword arguments.</doc>
-<arguments>
-<arg>web.Check Title</arg>
-<arg>C:\\WebServer\\html\\error.html</arg>
-<arg>Error Page</arg>
-</arguments>
-<status status="PASS" endtime="20180421 19:03:57.222" starttime="20180421 19:03:57.221"></status>
-</kw>
-<kw name="Comment" library="BuiltIn">
-<doc>Displays the given messages in the log file as keyword arguments.</doc>
-<arguments>
-<arg>web.Check Title</arg>
-<arg>C:\\WebServer\\html\\welcome.html</arg>
-<arg>Welcome Page</arg>
-</arguments>
-<status status="PASS" endtime="20180421 19:03:57.222" starttime="20180421 19:03:57.222"></status>
-</kw>
-<kw name="Comment" library="BuiltIn">
-<doc>Displays the given messages in the log file as keyword arguments.</doc>
-<status status="PASS" endtime="20180421 19:03:57.223" starttime="20180421 19:03:57.223"></status>
-</kw>
-<kw name="Comment" library="BuiltIn">
-<doc>Displays the given messages in the log file as keyword arguments.</doc>
-<arguments>
-<arg>web.Check Title</arg>
-<arg>http://localhost:7272/index.html</arg>
-<arg>Login Page</arg>
-</arguments>
-<status status="PASS" endtime="20180421 19:03:57.224" starttime="20180421 19:03:57.223"></status>
-</kw>
-<kw name="Comment" library="BuiltIn">
-<doc>Displays the given messages in the log file as keyword arguments.</doc>
-<arguments>
-<arg>web.Check Title</arg>
-<arg>http://localhost:7272/error.html</arg>
-<arg>Error Page</arg>
-</arguments>
-<status status="PASS" endtime="20180421 19:03:57.224" starttime="20180421 19:03:57.224"></status>
-</kw>
-<kw name="Comment" library="BuiltIn">
-<doc>Displays the given messages in the log file as keyword arguments.</doc>
-<arguments>
-<arg>web.Check Title</arg>
-<arg>http://localhost:7272/welcome.html</arg>
-<arg>Welcome Page</arg>
-</arguments>
-<status status="PASS" endtime="20180421 19:03:57.225" starttime="20180421 19:03:57.225"></status>
-</kw>
-<kw name="Comment" library="BuiltIn">
-<doc>Displays the given messages in the log file as keyword arguments.</doc>
-<arguments>
-<arg>web.Check Title</arg>
-<arg>https://www.google.com/</arg>
-<arg>Google</arg>
-</arguments>
-<status status="PASS" endtime="20180421 19:03:57.226" starttime="20180421 19:03:57.225"></status>
-</kw>
-<kw name="Comment" library="BuiltIn">
-<doc>Displays the given messages in the log file as keyword arguments.</doc>
-<arguments>
-<arg>web.Check Title</arg>
-<arg>https://mail.google.com</arg>
-<arg>Gmail</arg>
-</arguments>
-<status status="PASS" endtime="20180421 19:03:57.226" starttime="20180421 19:03:57.226"></status>
-</kw>
-<kw name="Check Title" library="web">
-<doc>웹페이지 파일에서 타이틀 확인 키워드</doc>
-<arguments>
-<arg>https://translate.google.com/</arg>
-<arg>Google 번역</arg>
-</arguments>
+<test id="s1-s1-s1-t1" name="TC_Check_Platform">
+<kw name="Get Platform Info" library="win">
 <assign>
-<var>${ret}</var>
+<var>${arch}</var>
 </assign>
-<msg timestamp="20180421 19:03:57.513" level="FAIL">Fail URL. There is no title</msg>
-<status status="FAIL" endtime="20180421 19:03:57.513" starttime="20180421 19:03:57.227"></status>
+<msg timestamp="20180426 10:00:22.202" level="INFO">${arch} = x64</msg>
+<status status="PASS" endtime="20180426 10:00:22.202" starttime="20180426 10:00:22.202"></status>
 </kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${arch}</arg>
+</arguments>
+<msg timestamp="20180426 10:00:22.203" level="INFO">x64</msg>
+<status status="PASS" endtime="20180426 10:00:22.203" starttime="20180426 10:00:22.203"></status>
+</kw>
+<doc>autoit library로 사용했던 방식을 유저 라이브러리로 작성</doc>
 <tags>
 <tag>Self</tag>
 </tags>
-<status status="FAIL" endtime="20180421 19:03:57.515" critical="yes" starttime="20180421 19:03:57.219">Fail URL. There is no title</status>
+<status status="PASS" endtime="20180426 10:00:22.204" critical="yes" starttime="20180426 10:00:22.198"></status>
 </test>
 <doc>자체 제작한 ``CalculatorLibrary.py``라이브러리를 이용하여 테스트 케이스 작성한 사례입니다.</doc>
-<status status="FAIL" endtime="20180421 19:03:57.516" starttime="20180421 19:03:51.998"></status>
+<status status="PASS" endtime="20180426 10:00:22.204" starttime="20180426 10:00:17.156"></status>
 </suite>
-<status status="FAIL" endtime="20180421 19:03:57.520" starttime="20180421 19:03:51.996"></status>
+<status status="PASS" endtime="20180426 10:00:22.209" starttime="20180426 10:00:17.154"></status>
 </suite>
-<status status="FAIL" endtime="20180421 19:03:57.521" starttime="20180421 19:03:51.968"></status>
+<status status="PASS" endtime="20180426 10:00:22.210" starttime="20180426 10:00:17.128"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
-<stat fail="1" pass="0">Self</stat>
+<stat fail="0" pass="1">Self</stat>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Keyword" pass="0">Keyword</stat>
-<stat fail="1" id="s1-s1" name="TestScript" pass="0">Keyword.TestScript</stat>
-<stat fail="1" id="s1-s1-s1" name="6 3 SelfKeyword" pass="0">Keyword.TestScript.6 3 SelfKeyword</stat>
+<stat fail="0" id="s1" name="Keyword" pass="1">Keyword</stat>
+<stat fail="0" id="s1-s1" name="TestScript" pass="1">Keyword.TestScript</stat>
+<stat fail="0" id="s1-s1-s1" name="6 3 SelfKeyword" pass="1">Keyword.TestScript.6 3 SelfKeyword</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20180421 19:03:55.242" level="ERROR">Error in file 'C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript\Resource\remote.robot': Getting keyword names from library 'Remote' failed: Calling dynamic method 'get_keyword_names' failed: Connecting remote server at http://127.0.0.1:8270 failed: [Errno 10061] </msg>
+<msg timestamp="20180426 10:00:20.399" level="ERROR">Error in file 'C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestScript\Resource\remote.robot': Getting keyword names from library 'Remote' failed: Calling dynamic method 'get_keyword_names' failed: Connecting remote server at http://127.0.0.1:8270 failed: [Errno 10061] </msg>
 </errors>
 </robot>
