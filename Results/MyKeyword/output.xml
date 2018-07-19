@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180717 11:11:58.026" generator="Robot 3.0.4 (Python 2.7.13 on win32)">
+<suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword" id="s1" name="Keyword">
+<suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestCase" id="s1-s1" name="TestCase">
+<suite source="C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestCase\6_1_CollaboKeyword.robot" id="s1-s1-s1" name="6 1 CollaboKeyword">
+<test id="s1-s1-s1-t1" name="test2">
+<kw name="Open Browser" library="Sel">
+<arguments>
+<arg>https://sites.google.com/a/chromium.org/chromedriver/downloads</arg>
+<arg>gc</arg>
+</arguments>
+<msg timestamp="20180717 11:12:08.544" level="INFO">Opening browser 'gc' to base url 'https://sites.google.com/a/chromium.org/chromedriver/downloads'</msg>
+<status status="PASS" endtime="20180717 11:12:14.694" starttime="20180717 11:12:08.543"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Sel">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//*[@id="sites-canvas-main-content"]/table/tbody/tr/td/div/h2/b/a</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" endtime="20180717 11:12:14.726" starttime="20180717 11:12:14.695"></status>
+</kw>
+<kw name="Click Link" library="Sel">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>xpath=.//*[@id="sites-canvas-main-content"]/table/tbody/tr/td/div/h2/b/a</arg>
+</arguments>
+<msg timestamp="20180717 11:12:14.727" level="INFO">Clicking link 'xpath=.//*[@id="sites-canvas-main-content"]/table/tbody/tr/td/div/h2/b/a'.</msg>
+<status status="PASS" endtime="20180717 11:12:14.806" starttime="20180717 11:12:14.726"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Sel">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=/html/body/table/tbody/tr[6]/td[2]/a</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Sel">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180717 11:12:25.324" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180717 11:12:25.325" starttime="20180717 11:12:24.960"></status>
+</kw>
+<msg timestamp="20180717 11:12:25.326" level="FAIL">Element locator 'xpath=/html/body/table/tbody/tr[6]/td[2]/a' did not match any elements after 10 seconds</msg>
+<status status="FAIL" endtime="20180717 11:12:25.326" starttime="20180717 11:12:14.807"></status>
+</kw>
+<status status="FAIL" endtime="20180717 11:12:25.327" critical="yes" starttime="20180717 11:12:08.542">Element locator 'xpath=/html/body/table/tbody/tr[6]/td[2]/a' did not match any elements after 10 seconds</status>
+</test>
+<status status="FAIL" endtime="20180717 11:12:25.327" starttime="20180717 11:11:58.079"></status>
+</suite>
+<status status="FAIL" endtime="20180717 11:12:25.330" starttime="20180717 11:11:58.077"></status>
+</suite>
+<status status="FAIL" endtime="20180717 11:12:25.331" starttime="20180717 11:11:58.050"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Keyword" pass="0">Keyword</stat>
+<stat fail="1" id="s1-s1" name="TestCase" pass="0">Keyword.TestCase</stat>
+<stat fail="1" id="s1-s1-s1" name="6 1 CollaboKeyword" pass="0">Keyword.TestCase.6 1 CollaboKeyword</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180717 11:12:01.110" level="ERROR">Error in file 'C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestCase\Resource\remote.robot': Getting keyword names from library 'Remote' failed: Calling dynamic method 'get_keyword_names' failed: Connecting remote server at http://127.0.0.1:8270 failed: [Errno 10061] </msg>
+<msg timestamp="20180717 11:12:04.110" level="ERROR">Error in file 'C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestCase\Resource\remote.robot': Getting keyword names from library 'Remote' failed: Calling dynamic method 'get_keyword_names' failed: Connecting remote server at http://127.0.0.1:8271 failed: [Errno 10061] </msg>
+<msg timestamp="20180717 11:12:07.111" level="ERROR">Error in file 'C:\Users\ahnlab\Google 드라이브\2018\책\Keyword\TestCase\Resource\remote.robot': Getting keyword names from library 'Remote' failed: Calling dynamic method 'get_keyword_names' failed: Connecting remote server at http://127.0.0.1:8273 failed: [Errno 10061] </msg>
+</errors>
+</robot>

@@ -2,6 +2,6 @@
 
 title RemoteServer_AutoIT
 
-python "C:\Keyword\RemoteLibrary\AutoItLib.py" %1 8271
+python "C:\Keyword\TestLib\RemoteLibrary\AutoItLib.py" %1 8271
 
 pause

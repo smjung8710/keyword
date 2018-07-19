@@ -2,6 +2,6 @@
 
 title RemoteServer_Selenium 
 
-python "C:\Keyword\RemoteLibrary\SeleniumLib.py" %1 8273
+python "C:\Keyword\TestLib\RemoteLibrary\SeleniumLib.py" %1 8273
 
 pause

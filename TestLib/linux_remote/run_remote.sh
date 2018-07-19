@@ -1,2 +1,2 @@
 #!/bin/bash
-python /BuFF/TestLib/CommonLibrary.py $1
+python /Keyword/TestLib/RemoteLibrary/ExampleRemoteLib.py $1
