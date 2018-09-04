@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180904 16:30:47.100" generator="Robot 3.0.4 (Python 2.7.13 on win32)">
+<suite source="C:\Users\ahnlab\Google 드라이브\2018\RFbook\Keyword\TestCase" id="s1" name="TestCase">
+<suite source="C:\Users\ahnlab\Google 드라이브\2018\RFbook\Keyword\TestCase\3_1_RFBaseStructure_Korean.robot" id="s1-s1" name="3 1 RFBaseStructure Korean">
+<kw type="setup" name="테스트스윗_SETUP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>1.TestSuite_SETUP</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.565" level="INFO">1.TestSuite_SETUP</msg>
+<status status="PASS" endtime="20180904 16:30:48.565" starttime="20180904 16:30:48.565"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.566" starttime="20180904 16:30:48.564"></status>
+</kw>
+<test id="s1-s1-t1" name="TC1_RF_TSFixture">
+<kw type="setup" name="테스트케이스_SETUP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>2.TestSuite_TestCase_SETUP</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.569" level="INFO">2.TestSuite_TestCase_SETUP</msg>
+<status status="PASS" endtime="20180904 16:30:48.570" starttime="20180904 16:30:48.569"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.570" starttime="20180904 16:30:48.568"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>테스트 스윗설정만 실행</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.571" level="INFO">테스트 스윗설정만 실행</msg>
+<status status="PASS" endtime="20180904 16:30:48.571" starttime="20180904 16:30:48.570"></status>
+</kw>
+<kw type="teardown" name="테스트케이스_TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>6.테스트스윗하위의_테스트케이스_TEARDOWN</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.572" level="INFO">6.테스트스윗하위의_테스트케이스_TEARDOWN</msg>
+<status status="PASS" endtime="20180904 16:30:48.573" starttime="20180904 16:30:48.572"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.573" starttime="20180904 16:30:48.572"></status>
+</kw>
+<doc>실습1 RFStructure : 테스트 스윗 픽스쳐 기능 확인</doc>
+<tags>
+<tag>structure</tag>
+</tags>
+<timeout value="1 hour 40 minutes 2 seconds"></timeout>
+<status status="PASS" endtime="20180904 16:30:48.573" critical="yes" starttime="20180904 16:30:48.566"></status>
+</test>
+<test id="s1-s1-t2" name="TC2_RF_Variable">
+<kw type="setup" name="테스트케이스_SETUP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>2.TestSuite_TestCase_SETUP</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.576" level="INFO">2.TestSuite_TestCase_SETUP</msg>
+<status status="PASS" endtime="20180904 16:30:48.577" starttime="20180904 16:30:48.576"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.577" starttime="20180904 16:30:48.575"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>사용자 이름변수는 ${이름}</arg>
+<arg>사용자 암호는 ${암호}</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.578" level="INFO">사용자 이름변수는 robot</msg>
+<msg timestamp="20180904 16:30:48.578" level="INFO">사용자 암호는 secret</msg>
+<status status="PASS" endtime="20180904 16:30:48.578" starttime="20180904 16:30:48.577"></status>
+</kw>
+<kw type="teardown" name="테스트케이스_TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>6.테스트스윗하위의_테스트케이스_TEARDOWN</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.579" level="INFO">6.테스트스윗하위의_테스트케이스_TEARDOWN</msg>
+<status status="PASS" endtime="20180904 16:30:48.580" starttime="20180904 16:30:48.579"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.580" starttime="20180904 16:30:48.578"></status>
+</kw>
+<doc>실습1 RFStructure : 변수값 확인</doc>
+<tags>
+<tag>structure</tag>
+</tags>
+<timeout value="1 hour 40 minutes 2 seconds"></timeout>
+<status status="PASS" endtime="20180904 16:30:48.580" critical="yes" starttime="20180904 16:30:48.574"></status>
+</test>
+<test id="s1-s1-t3" name="TC3_RF_UserKeyword">
+<kw type="setup" name="테스트케이스_SETUP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>2.TestSuite_TestCase_SETUP</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.583" level="INFO">2.TestSuite_TestCase_SETUP</msg>
+<status status="PASS" endtime="20180904 16:30:48.584" starttime="20180904 16:30:48.583"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.584" starttime="20180904 16:30:48.582"></status>
+</kw>
+<kw name="사용자키워드">
+<doc>example keyword</doc>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>사용자 키워드입니다.</arg>
+<arg>사용자이름은 ${이름} 입니다.</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.585" level="INFO">사용자 키워드입니다.</msg>
+<msg timestamp="20180904 16:30:48.585" level="INFO">사용자이름은 robot 입니다.</msg>
+<status status="PASS" endtime="20180904 16:30:48.585" starttime="20180904 16:30:48.585"></status>
+</kw>
+<kw type="teardown" name="사용자키워드_TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>4. 사용자키워드 Teardown</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.587" level="INFO">4. 사용자키워드 Teardown</msg>
+<status status="PASS" endtime="20180904 16:30:48.587" starttime="20180904 16:30:48.586"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.587" starttime="20180904 16:30:48.586"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.588" starttime="20180904 16:30:48.584"></status>
+</kw>
+<kw type="teardown" name="테스트케이스_TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>6.테스트스윗하위의_테스트케이스_TEARDOWN</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.589" level="INFO">6.테스트스윗하위의_테스트케이스_TEARDOWN</msg>
+<status status="PASS" endtime="20180904 16:30:48.589" starttime="20180904 16:30:48.589"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.590" starttime="20180904 16:30:48.588"></status>
+</kw>
+<doc>실습1 RFStructure  사용자 키워드 사용</doc>
+<tags>
+<tag>structure</tag>
+</tags>
+<timeout value="1 hour 40 minutes 2 seconds"></timeout>
+<status status="PASS" endtime="20180904 16:30:48.590" critical="yes" starttime="20180904 16:30:48.581"></status>
+</test>
+<test id="s1-s1-t4" name="TC4_RF_MyFixture">
+<kw type="setup" name="예시_SETUP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>3.Examp_SETUP</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.594" level="INFO">3.Examp_SETUP</msg>
+<status status="PASS" endtime="20180904 16:30:48.595" starttime="20180904 16:30:48.593"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.595" starttime="20180904 16:30:48.593"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>테스트 케이스 픽스처 예시 테스트 케이스</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.596" level="INFO">테스트 케이스 픽스처 예시 테스트 케이스</msg>
+<status status="PASS" endtime="20180904 16:30:48.596" starttime="20180904 16:30:48.595"></status>
+</kw>
+<kw type="teardown" name="예시_TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>5 .ExampleTC_TEARDOWN</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.598" level="INFO">5 .ExampleTC_TEARDOWN</msg>
+<status status="PASS" endtime="20180904 16:30:48.598" starttime="20180904 16:30:48.597"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.598" starttime="20180904 16:30:48.597"></status>
+</kw>
+<doc>실습1 RFStructure : 테스트 케이스 prefix 확인</doc>
+<tags>
+<tag>structure</tag>
+</tags>
+<timeout value="1 hour 40 minutes 2 seconds"></timeout>
+<status status="PASS" endtime="20180904 16:30:48.598" critical="yes" starttime="20180904 16:30:48.590"></status>
+</test>
+<kw type="teardown" name="테스트스윗_TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>7.테스트스윗_TEARDOWN</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180904 16:30:48.600" level="INFO">7.테스트스윗_TEARDOWN</msg>
+<status status="PASS" endtime="20180904 16:30:48.600" starttime="20180904 16:30:48.600"></status>
+</kw>
+<status status="PASS" endtime="20180904 16:30:48.601" starttime="20180904 16:30:48.599"></status>
+</kw>
+<doc>Keyword Based Automation Test</doc>
+<status status="PASS" endtime="20180904 16:30:48.601" starttime="20180904 16:30:47.148"></status>
+</suite>
+<status status="PASS" endtime="20180904 16:30:48.603" starttime="20180904 16:30:47.124"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="4">structure</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="TestCase" pass="4">TestCase</stat>
+<stat fail="0" id="s1-s1" name="3 1 RFBaseStructure Korean" pass="4">TestCase.3 1 RFBaseStructure Korean</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

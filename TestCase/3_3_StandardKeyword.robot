@@ -65,6 +65,8 @@ TC29_String_MatchRegexp
 TC30_String_Split
     [Tags]    string
     ${hour}    ${minute}    ${second}    Split Log Time    18:55:43
+    ${time}    현재시간
+    ${hour}    ${minute}    ${second}    시간얻기    ${time}
 
 TC31_Dialog_Condition
     ${username}    Dialogs.Get Selection From User    사용자를 선택하세요    user01    user02    user03
@@ -82,6 +84,24 @@ TC32_Dialog_MultiCondition
 
 *** Keywords ***
 Split Log Time
+    [Arguments]    ${log_time}
+    ${split_time}    string.Split String    ${log_time}    :    2
+    log    ${split_time}
+    ${H}    Collections.Get From List    ${split_time}    0
+    log    ${H}
+    ${M}    Collections.Get From List    ${split_time}    1
+    log    ${M}
+    ${S}    Collections.Get From List    ${split_time}    2
+    log    ${S}
+    [Return]    ${H}    ${M}    ${S}
+
+현재시간
+    ${rc}    ${time}    Run And Return Rc And Output    time
+    ${time}    Get Line    ${time}    0
+    ${time}    Get Substring    ${time}    -11    -3    #초시간제거
+    [Return]    ${time}
+
+시간얻기
     [Arguments]    ${log_time}
     ${split_time}    string.Split String    ${log_time}    :    2
     log    ${split_time}

@@ -56,7 +56,7 @@ Connect Share Folder
     : FOR    ${count}    IN RANGE    5
     \    ${output}    OS.Run And Return Rc    net use \\\\${IP} /user:${ID} ${PW} /PERSISTENT:YES
     \    Exit For Loop If    '${output}' == '0'
-    \    log    count:${count}
+    \    log    count:${count}    console=true
     \    Sleep    0.5s
     \    OS.Run    net use * /delete /yes
     [Return]    ${output}

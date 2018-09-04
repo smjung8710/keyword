@@ -1,33 +1,28 @@
 *** Settings ***
-Documentation     ch3
-Test Setup
-Force Tags
-Default Tags
-Test Template
-Test Timeout
+Documentation     Builtin Keyword example
 Resource          Resource/common.robot
 
 *** Variables ***
 ${USER_NAME}      robot    # Scalar Variable Example
-${USER_PASS}      secret    # Scalar Variable Example
+,      secret    # Scalar Variable Example
 @{USER1}          robot    secret    # List Variable Example
 &{USER2}          name=robot    pass=secret    # Dictionary Variable Example
 ${HOST}           8.8.8.8
 
 *** Test Cases ***
 TC10_Builtin_Variable_Set
-    [Documentation]    실습 9 변수 선언 예시
+    [Documentation]    변수 선언 예시
     [Tags]    var
     #scalar variable
-    Log many    scalar:${USER_NAME}    scalar:${USER_PASS}    name:${USER_NAME}
-    Log To Console    scalar:${USER_NAME}
-    Log To Console    scalar:${USER_PASS}
+    Log    scalar:${USER_NAME}    console=true
+    Log    scalar:${USER_PASS}    console=true
+    Log    name:${USER_NAME}    console=true
     #list variable
-    Log many    list: @{USER1}    name: @{USER1}[0]
-    Log To Console    list:@{USER1}
+    Log    list: @{USER1}    console=true
+    Log    name: @{USER1}[0]    console=true
     #dictionary variable
-    Log many    dic: &{USER2}    name: &{USER2}[name]
-    Log To Console    dic:&{USER2}
+    Log    dic: &{USER2}    console=true
+    Log    name: &{USER2}[name]    console=true
     #지역변수로 변경
     Set Test Variable    ${USER_NAME}    keyword
     ${USER_PASS}    Set Variable    automation
@@ -36,7 +31,7 @@ TC10_Builtin_Variable_Set
     Set Global Variable    &{USER2}    name=keyword    pass=automation
 
 TC11_Builtin_Variable_Check
-    [Documentation]    실습 10
+    [Documentation]    variable option example    
     [Tags]    var
     Log Many    scalar:${USER_NAME}    scalar:${USER_PASS}    list:@{USER1}    dic:&{USER2}
     Log To Console    scalar:${USER_NAME}

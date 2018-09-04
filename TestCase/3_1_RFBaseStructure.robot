@@ -15,6 +15,11 @@ ${USER_PASS}      secret    # Scalar Variable Example
 ${HOST}           8.8.8.8
 
 *** Test Cases ***
+TC36_Arg_Exit
+    [Documentation]    3장 테스트 케이스로 실습시 주의 필요
+    log    the first tc    console=true
+    Fatal Error
+
 TC1_RF_TSFixture
     [Documentation]    실습1 RFStructure : 테스트 스윗 픽스쳐 기능 확인
     Log    only TC    console=true
