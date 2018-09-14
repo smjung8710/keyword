@@ -155,20 +155,6 @@ TC92_Request_Get
     log    ${resp.content}
     log    ${resp.text}    #한국어 인코딩 적용
 
-test
-    \    \    \    /
-    click element    .//*[@id="__BVID__40____BV_tab_button__"]
-    my.get link list
-    \    //*[@id="__BVID__37___BV_tab_container_"]
-
-test2
-    Open Browser    https://sites.google.com/a/chromium.org/chromedriver/downloads     gc
-    my.Check Title
-    Sel.Wait Until Element Is Visible    xpath=.//*[@id="sites-canvas-main-content"]/table/tbody/tr/td/div/h2/b/a    10s
-    Sel.Click Link    xpath=.//*[@id="sites-canvas-main-content"]/table/tbody/tr/td/div/h2/b/a
-    Sel.Wait Until Element Is Visible    xpath=/html/body/table/tbody/tr[6]/td[2]/a    10s
-    Sel.Click Link    xpath=/html/body/table/tbody/tr[6]/td[2]/a
-
 *** Keywords ***
 Snapshot Create
     [Arguments]    ${VM}    ${SNAPSHOT}

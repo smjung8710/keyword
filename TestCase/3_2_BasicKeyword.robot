@@ -4,7 +4,7 @@ Resource          Resource/common.robot
 
 *** Variables ***
 ${USER_NAME}      robot    # Scalar Variable Example
-,      secret    # Scalar Variable Example
+${USER_PASS}      secret    # Scalar Variable Example
 @{USER1}          robot    secret    # List Variable Example
 &{USER2}          name=robot    pass=secret    # Dictionary Variable Example
 ${HOST}           8.8.8.8
@@ -31,7 +31,7 @@ TC10_Builtin_Variable_Set
     Set Global Variable    &{USER2}    name=keyword    pass=automation
 
 TC11_Builtin_Variable_Check
-    [Documentation]    variable option example    
+    [Documentation]    variable option example
     [Tags]    var
     Log Many    scalar:${USER_NAME}    scalar:${USER_PASS}    list:@{USER1}    dic:&{USER2}
     Log To Console    scalar:${USER_NAME}
@@ -40,7 +40,7 @@ TC11_Builtin_Variable_Check
     Log To Console    dic:&{USER2}
 
 TC12_Builtin_Variable_List_Dic
-    [Documentation]    실습 11
+    [Documentation]    리스트, 사전 변수 실습
     [Tags]    list
     #리스트 변수
     @{list} =    Set Variable    a    b    c
@@ -67,7 +67,7 @@ TC13_Builtin_Variable_String_Number
     Log    ${number}
 
 TC14_Builtin_Template
-    [Documentation]    실습12
+    [Documentation]    템플릿 실습
     [Tags]    Template    continue    ftp
     [Template]    There is file.ext file in dir folder
     #file index    #ext    #dir
@@ -83,7 +83,7 @@ TC14_Builtin_Template
     10    7zip    RF_Template
 
 TC15_Builtin_For Loop
-    [Documentation]    실습 13
+    [Documentation]    반복문 실습
     [Tags]    loop
     ${path}=    Set Variable    C:\\Python27
     @{elements}    OS.List Directories In Directory    ${path}
@@ -94,13 +94,13 @@ TC15_Builtin_For Loop
 
 TC16_Builtin_Loop_Range
     [Setup]    account
-    ${output}=    Connect Share Folder    ${IP}    ${ID}    ${PW}
+    ${output}=    Connect Share Folder    ${SHARE_IP}    ${SHARE_ID}    ${SHARE_PW}
     Run Keyword If    '${output}'!='0'    Fail    Pass Execution
 
 TC17_Builtin_Loop_Simple
     [Tags]    loop
     [Setup]    account
-    ${output}=    Connect Share Folder Simple    ${IP}    ${ID}    ${PW}
+    ${output}=    Connect Share Folder Simple    ${SHARE_IP}    ${SHARE_ID}    ${SHARE_PW}
     Run Keyword If    '${output}'!='0'    Fail    Pass Execution
 
 TC18_Builtin_Loop_Continue
@@ -156,6 +156,6 @@ There is file.ext file in dir folder
     OS.File Should Exist    C:\\${dir}\\${file}.${ext}    No Files
 
 account
-    Set Global Variable    ${IP}    1.1.1.1
-    Set Global Variable    ${ID}    robot
-    Set Global Variable    ${PW}    secret
+    Set Global Variable    ${SHARE_IP}    1.1.1.1
+    Set Global Variable    ${SHARE_ID}    robot
+    Set Global Variable    ${SHARE_PW}    secret

@@ -15,42 +15,43 @@ ${USER_PASS}      secret    # Scalar Variable Example
 ${HOST}           8.8.8.8
 
 *** Test Cases ***
-TC36_Arg_Exit
-    [Documentation]    3장 테스트 케이스로 실습시 주의 필요
-    log    the first tc    console=true
-    Fatal Error
-
 TC1_RF_TSFixture
-    [Documentation]    실습1 RFStructure : 테스트 스윗 픽스쳐 기능 확인
+    [Documentation]    RFStructure : 테스트 스윗 픽스쳐 기능 확인
+    [Tags]    fixture
     Log    only TC    console=true
 
 TC2_RF_Variable
-    [Documentation]    실습1 RFStructure : 변수값 확인
+    [Documentation]    RFStructure : 변수값 확인
+    [Tags]    fixture
     Log many    user name is ${USER_NAME}    pass is ${USER_PASS}
+    Log To Console    user name is ${USER_NAME}
+    Log To Console    pass is ${USER_PASS}
 
 TC3_RF_UserKeyword
-    [Documentation]    실습1 RFStructure \ 사용자 키워드 사용
+    [Documentation]    RFStructure \ 사용자 키워드 사용
+    [Tags]    fixture
     User Keyword    #Call User keyword
 
 TC4_RF_MyFixture
-    [Documentation]    실습1 RFStructure : 테스트 케이스 prefix 확인
+    [Documentation]    RFStructure : 테스트 케이스 픽스쳐 기능 확인
     [Setup]    Example_SETUP
-    log    UserKeyword running...    console=true
+    [Tags]    fixture
+    log    my fixture    console=true
     [Teardown]    Example_TEARDOWN
 
 TC5_RF_TCFixture
-    [Documentation]    실습 2 Prefix 사용 오류 : prefix syntax 만 있고 값이 없는 경우
+    [Documentation]    픽스처 사용 오류 : syntax 만 있고 값이 없는 경우
     [Setup]
     Log    only TC    console=true
     [Teardown]
 
 TC6_Arg_Tag_i
-    [Documentation]    실습 3 Tag 옵션 i
+    [Documentation]    Tag 옵션 i
     [Tags]    ex
     Log    host-${HOST}    console=true
 
 TC7_Arg_Tag_n
-    [Documentation]    실습 4 태그 옵션 n
+    [Documentation]    태그 옵션 n
     [Tags]    non
     log    must fail    console=true
     Fail

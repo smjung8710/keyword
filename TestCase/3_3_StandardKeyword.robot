@@ -63,10 +63,11 @@ TC29_String_MatchRegexp
     log many    ${ret1}    ${ret2}
 
 TC30_String_Split
-    [Tags]    string
+    [Documentation]    현재시간, 시간얻기는 윈도우에만 적용됩니다.
+    [Tags]    string    time
     ${hour}    ${minute}    ${second}    Split Log Time    18:55:43
-    ${time}    현재시간
-    ${hour}    ${minute}    ${second}    시간얻기    ${time}
+    #${time}    현재시간
+    #${hour}    ${minute}    ${second}    시간얻기    ${time}
 
 TC31_Dialog_Condition
     ${username}    Dialogs.Get Selection From User    사용자를 선택하세요    user01    user02    user03
@@ -86,16 +87,17 @@ TC32_Dialog_MultiCondition
 Split Log Time
     [Arguments]    ${log_time}
     ${split_time}    string.Split String    ${log_time}    :    2
-    log    ${split_time}
+    log    ${split_time}    console=true
     ${H}    Collections.Get From List    ${split_time}    0
-    log    ${H}
+    log    ${H}    console=true
     ${M}    Collections.Get From List    ${split_time}    1
-    log    ${M}
+    log    ${M}    console=true
     ${S}    Collections.Get From List    ${split_time}    2
-    log    ${S}
+    log    ${S}    console=true
     [Return]    ${H}    ${M}    ${S}
 
 현재시간
+    [Documentation]    윈도우에서 시간 얻기 time 명령어 사용
     ${rc}    ${time}    Run And Return Rc And Output    time
     ${time}    Get Line    ${time}    0
     ${time}    Get Substring    ${time}    -11    -3    #초시간제거

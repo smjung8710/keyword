@@ -43,7 +43,9 @@ ${DB_ID}          root
 ${DB_PW}          keyword
 ${DB_IP}          192.168.0.200
 ${DB_PORT}        5432
-&{SHARE}          IP=    ID=    PWD=
+${SHARE_IP}          ${EMPTY}
+${SHARE_ID}          ${EMPTY}
+${SHARE_PW}          ${EMPTY}
 ${VM}             ${EMPTY}
 ${SNAPSHOT_NAME}    ${EMPTY}
 ${VCENTER_IP}     10.2.4.216
