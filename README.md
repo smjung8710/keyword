@@ -8,6 +8,7 @@ http://www.yes24.com/24/Goods/64498456?Acode=101
 실습용 라이브러리와 테스트 케이스입니다. 
 
 =================================================================
+
 2019/03/23
 
 책에서 소개된 appium server가 종료되고 appium desktop 이 beta 버전에서 정식 버전으로 업데이트 되었습니다. 
@@ -20,6 +21,7 @@ https://saucelabs.com/resources/webinars/an-introduction-to-appium-desktop
 
 appium desktop 다운로드 
 https://github.com/appium/appium-desktop
+
 =================================================================
 
 2019/03/12
